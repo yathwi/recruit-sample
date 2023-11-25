@@ -1,19 +1,9 @@
 import Image from 'next/image';
-import { getNewsList } from '@/app/_libs/microcms';
-import { TOP_NEWS_LIMIT } from '@/app/_constants';
-import NewsList from '@/app/_components/NewsList';
-import styles from './page.module.css';
-import ButtonLink from '@/app/_components/ButtonLink';
 import Head from 'next/head';
 
 export const revalidate = 60;
 
 export default async function Page() {
-  const data = await getNewsList({
-    limit: TOP_NEWS_LIMIT,
-  });
-  console.log(1, process.env.MICROCMS_API_KEY);
-  console.log(111);
   return (
     <>
       <section className="relative flex items-center justify-center bg-black opacity-90 text-white overflow-hidden py-[200px]">
@@ -37,10 +27,8 @@ export default async function Page() {
       </section>
       <section className="relative bg-white max-w-[90%] md:[840px] mt-[-40px] mx-auto py-6 px-10 rounded-[var(--border-radius)]">
         <h2 className="text-lg">News</h2>
-        <NewsList articles={data.contents} />
-        <div className="absolute right-7 md:right-[-40px] bottom-[-40px]">
-          <ButtonLink href="/news">もっとみる</ButtonLink>
-        </div>
+
+        <div className="absolute right-7 md:right-[-40px] bottom-[-40px]"></div>
       </section>
       <section className="max-w-[90%]  md:w-[920px] mx-auto py-[100px]">
         <div className="md:flex justify-between items-start md:space-x-20">
@@ -52,9 +40,7 @@ export default async function Page() {
               <br />
               その他、申請業務の代行を通した横のつながりを大切にし、お客様のご要望にお応えしています。
             </p>
-            <div className="  -mt-[20px] w-60">
-              <ButtonLink href="/business">もっとみる</ButtonLink>
-            </div>
+            <div className="  -mt-[20px] w-60"></div>
           </div>
           <div className=" mt-10">
             <Image
@@ -137,7 +123,6 @@ export default async function Page() {
               <br />
               水の流れと共に　幸せ・感謝・楽しさ・感動をお運び致します。
             </p>
-            <ButtonLink href="/recruitment">採用情報へ</ButtonLink>
           </div>
           <div className=" mt-10">
             <Image
