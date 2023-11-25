@@ -1,12 +1,18 @@
 import Image from 'next/image';
 import Head from 'next/head';
+import Header from './_components/Header';
+import { Hero } from './_components/Hero';
+import { Message } from './_components/Message';
+import { Member } from './_components/Member';
 
 export const revalidate = 60;
 
 export default async function Page() {
   return (
     <>
-      <section className="relative flex items-center justify-center bg-black opacity-90 text-white overflow-hidden py-[200px]"></section>
+      <Hero />
+      <Message />
+      <Member />
     </>
   );
 }
