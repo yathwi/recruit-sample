@@ -32,6 +32,7 @@
     "eslint": "8.36.0",
     "eslint-config-next": "13.2.4",
     "eslint-config-prettier": "^8.7.0",
+    "framer-motion": "^10.16.5",
     "highlight.js": "^11.7.0",
     "microcms-js-sdk": "^2.3.3",
     "next": "^13.4.2",
@@ -39,7 +40,8 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-icon": "^1.0.0",
-    "react-icons": "^4.10.1",
+    "react-icons": "^4.12.0",
+    "react-intersection-observer": "^9.5.3",
     "typescript": "4.9.5"
   },
   "devDependencies": {
