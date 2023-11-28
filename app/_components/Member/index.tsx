@@ -48,7 +48,7 @@ export const Member: React.FC = () => {
         <div className="lg:px-20 px-5 pt-10 pc:pt-20 pb-2 lg:pb-10 ml-[10%]">
           <h2 className="pc:text-[70px] font-cinzel text-xl">{`Member's Voice`}</h2>
           <div className=" lg:flex justify-between">
-            <div className="flex items-center font-bold">
+            <div className="flex items-center font-cinzel">
               <div className="w-10 border-t-2 border-gray-500 mr-3" />
               <p>社員インタビュー</p>
             </div>
@@ -76,7 +76,7 @@ export const Member: React.FC = () => {
               <SwiperSlide key={index}>
                 <div className="">
                   <Image src={member.src} alt={member.name} width={415} height={519} priority />
-                  <p className="mt-5 font-bold text-left">{member.name}</p>
+                  <p className="mt-5 font-cinzel text-left">{member.name}</p>
                 </div>
               </SwiperSlide>
             ))}

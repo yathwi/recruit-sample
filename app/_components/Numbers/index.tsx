@@ -76,7 +76,7 @@ export const Numbers: React.FC = () => {
     }
   };
   return (
-    <div className=" w-full mt-20 bg-[#32727C] lg:h-[1100px] h-[1550px] bg-opacity-80 relative text-white">
+    <div className=" w-full mt-20 bg-[#32727C] lg:h-[1250px] h-[1550px] bg-opacity-80 relative text-white">
       <div
         className="w-full absolute h-full bg-no-repeat bg-cover bg-center"
         style={{ backgroundImage: "url('/add/bg-numbers.jpg')" }}
@@ -84,12 +84,12 @@ export const Numbers: React.FC = () => {
         <div className="absolute top-0 left-0 w-full h-full bg-[#32727C] bg-opacity-80" />
 
         <div className=" max-w-[90%] relative mx-auto">
-          <h2 className=" text-xl pt-10 font-cinzel pc:text-[96px]">Numbers</h2>
-          <div className=" flex items-center font-bold">
+          <h2 className=" text-xl pt-10 font-cinzel lg:text-[96px] font-bold">Numbers</h2>
+          <div className=" flex items-center font-cinzel">
             <div className=" w-10 border-t-2 border-white mr-3" />
-            <p>数字で見るテックイノベイト</p>
+            <p className=" lg:text-lg">数字で見るテックイノベイト</p>
           </div>
-          <div className=" mt-10 lg:mt-20 lg:max-w-[70%]   mx-auto">
+          <div className=" mt-10 lg:mt-20 lg:max-w-[75%]   mx-auto">
             <InView
               as="div"
               onChange={startAnimation1}
@@ -98,13 +98,13 @@ export const Numbers: React.FC = () => {
               <div className="lg:w-60 w-1/2 text-center">
                 <p>平均年齢</p>
                 <p>
-                  <motion.span className=" text-[96px]">{age}</motion.span>歳
+                  <motion.span className=" text-[96px] font-bold">{age}</motion.span>歳
                 </p>
               </div>
               <div className="lg:w-60 w-1/2 lg:hidden block text-center">
                 <p className=" ">離職率</p>
                 <p>
-                  <motion.span className=" text-[96px]">{turnover}</motion.span>%
+                  <motion.span className=" text-[96px] font-bold">{turnover}</motion.span>%
                 </p>
               </div>
               <div className=" lg:w-80 mb-10 lg:mb-10">
@@ -128,7 +128,7 @@ export const Numbers: React.FC = () => {
               <div className="w-60 hidden lg:block text-center">
                 <p className=" ">離職率</p>
                 <p>
-                  <motion.span className=" text-[96px]">{turnover}</motion.span>%
+                  <motion.span className=" text-[96px] font-bold">{turnover}</motion.span>%
                 </p>
               </div>
             </InView>
@@ -141,7 +141,9 @@ export const Numbers: React.FC = () => {
                 <div key={item.id} className=" lg:w-60 w-1/2 text-center">
                   <p>{item.name}</p>
                   <p>
-                    <motion.span className=" text-[96px]">{transformedValues[index]}</motion.span>
+                    <motion.span className=" text-[96px] font-bold">
+                      {transformedValues[index]}
+                    </motion.span>
                     {item.unit}
                   </p>
                 </div>
@@ -161,7 +163,7 @@ export const Numbers: React.FC = () => {
                     <Image src="/add/map-bg.png" width={373} height={195} alt="graph" />
                   </div>
 
-                  <motion.p className="text-[96px] mr-2">{nationality}</motion.p>
+                  <motion.p className="text-[96px] font-bold mr-2">{nationality}</motion.p>
                   <p>
                     カ国以上の国籍を
                     <br />
@@ -178,7 +180,7 @@ export const Numbers: React.FC = () => {
                   </p>
                 </div>
                 <p>
-                  <motion.span className="text-[96px] mr-2">{successRate}</motion.span>%
+                  <motion.span className="text-[96px] font-bold mr-2">{successRate}</motion.span>%
                 </p>
               </div>
             </InView>

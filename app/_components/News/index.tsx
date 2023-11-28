@@ -29,9 +29,9 @@ export const News: React.FC = () => {
       <div className=" lg:ml-[30%] lg:flex max-w-[90%] mx-auto lg:w-full pt-10 lg:pt-80">
         <div className=" mr-5">
           <h2 className=" text-2xl font-cinzel lg:text-[70px] text-left text-white">News</h2>{' '}
-          <div className=" flex items-center font-bold">
+          <div className=" flex items-center font-cinzel">
             <div className=" w-10 border-t-2 border-gray-500 mr-3" />
-            <h3 className=" font-bold lg:text-lg text-white">お知らせ</h3>
+            <h3 className=" font-cinzel lg:text-lg text-white">お知らせ</h3>
           </div>
         </div>
         <div className=" mt-5 lg:mt-32 text-white lg:w-[500px]">

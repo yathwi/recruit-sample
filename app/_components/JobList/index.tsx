@@ -25,14 +25,14 @@ export const JobList: React.FC = () => {
       className=" max-w-[90%] mx-auto mt-10"
     >
       <h2 className=" text-2xl lg:text-[70px] text-left font-cinzel">Job List</h2>{' '}
-      <div className=" flex items-center font-bold">
+      <div className=" flex items-center font-cinzel">
         <div className=" w-10 border-t-2 border-gray-500 mr-3" />
-        <h3 className=" font-bold lg:text-lg">募集職種</h3>
+        <h3 className=" font-cinzel lg:text-lg">募集職種</h3>
       </div>
       <div className=" mt-10 lg:mt-20 lg:flex justify-center border-t pt-10 lg:max-w-[80%] mx-auto">
         <div className="lg:w-[40%] lg:pr-10 lg:border-r-2">
           <div className=" flex items-center">
-            <p className=" mr-2 text-lg font-bold">ソフトウェアエンジニア </p>
+            <p className=" mr-2 text-lg font-cinzel">ソフトウェアエンジニア </p>
             <IoIosArrowDroprightCircle size="20px" />
           </div>
           <p className=" lg:mt-5">
@@ -41,7 +41,7 @@ export const JobList: React.FC = () => {
         </div>
         <div className="lg:w-[40%] mt-5 lg:mt-0 lg:pl-10">
           <div className=" flex items-center">
-            <p className=" mr-2 text-lg font-bold">デジタルマーケター</p>
+            <p className=" mr-2 text-lg font-cinzel">デジタルマーケター</p>
             <IoIosArrowDroprightCircle size="20px" />
           </div>
           <p className=" lg:mt-5">
@@ -50,7 +50,7 @@ export const JobList: React.FC = () => {
         </div>
       </div>
       <div className=" flex justify-center mt-10 lg:mt-20">
-        <button className=" bg-[#28C7E4] hover:opacity-80 text-white font-bold py-5 px-20 rounded">
+        <button className=" bg-[#28C7E4] hover:opacity-80 text-white font-cinzel py-5 px-20">
           ENTRY
         </button>
       </div>

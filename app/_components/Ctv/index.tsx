@@ -9,7 +9,7 @@ export const Ctv: React.FC = () => {
         </p>
       </div>
       <div className=" flex justify-center mt-5">
-        <button className=" text-lg font-cinzel text-black bg-white hover:opacity-80 font-bold py-5 px-40">
+        <button className=" text-lg font-cinzel text-black bg-white hover:opacity-80 font-cinzel py-5 px-20 lg:px-40">
           ENTRY
         </button>
       </div>
