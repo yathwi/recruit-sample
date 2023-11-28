@@ -19,6 +19,8 @@ module.exports = {
       fontFamily: {
         crossten: ['Crossten'],
         notoSans: ['Noto Sans JP'],
+        ZKgothic: ['Zen Kaku Gothic New'],
+        cinzel: ['Cinzel'],
       },
       fontWeight: {
         light: 300,

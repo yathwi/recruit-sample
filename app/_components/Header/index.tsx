@@ -29,11 +29,11 @@ const navItems = [
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   return (
-    <header className=" bg-white  text-white">
-      <div className=" hidden ml-[5%]  mx-auto absolute top-0 left-0 right-0 pt-8 pb-8 z-50 pc:flex items-center justify-between">
+    <header className="  text-white">
+      <div className="  ml-[5%] hidden  mx-auto absolute top-0 left-0 right-0 pt-8 pb-8 z-50 lg:flex items-center justify-between">
         <Link href="/" className="flex">
           <Image
-            src="/logo.png"
+            src="/add/logo.png"
             alt="太光設備株式会社"
             className=" w-auto"
             width={60}
@@ -52,7 +52,7 @@ export default function Header() {
           </button>
         </ul>
       </div>
-      <div className=" md:hidden   ">
+      <div className=" md:hidden ">
         <button
           onClick={() => setIsOpen(!isOpen)}
           className="flex flex-col items-center z-50 absolute top-5 right-5 justify-center w-10 h-10"

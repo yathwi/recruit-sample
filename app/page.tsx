@@ -13,7 +13,7 @@ export const revalidate = 60;
 
 export default async function Page() {
   return (
-    <>
+    <div className=" font-ZKgothic">
       <Hero />
       <Message />
       <Member />
@@ -21,6 +21,6 @@ export default async function Page() {
       <JobList />
       <News />
       <Ctv />
-    </>
+    </div>
   );
 }

@@ -24,7 +24,7 @@ export const Message: React.FC = () => {
       viewport={{ once: false, amount: 0 }}
       className="  mt-10 mx-auto lg:max-w-[90%] max-w-[95%]"
     >
-      <h2 className=" text-xl lg:text-[70px] lg:text-right lg:mr-[5%]">Message</h2>{' '}
+      <h2 className=" text-xl lg:text-[70px] font-cinzel lg:text-right lg:mr-[5%]">Message</h2>{' '}
       <div className=" lg:flex justify-end">
         <div className=" lg:max-w-[25%] lg:mr-20 lg:mt-28">
           <h3 className=" font-bold lg:text-lg">テクノロジーで世界を動かす</h3>

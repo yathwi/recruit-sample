@@ -28,7 +28,7 @@ export const News: React.FC = () => {
       </div>
       <div className=" lg:ml-[30%] lg:flex max-w-[90%] mx-auto lg:w-full pt-10 lg:pt-80">
         <div className=" mr-5">
-          <h2 className=" text-2xl lg:text-[70px] text-left text-white">News</h2>{' '}
+          <h2 className=" text-2xl font-cinzel lg:text-[70px] text-left text-white">News</h2>{' '}
           <div className=" flex items-center font-bold">
             <div className=" w-10 border-t-2 border-gray-500 mr-3" />
             <h3 className=" font-bold lg:text-lg text-white">お知らせ</h3>

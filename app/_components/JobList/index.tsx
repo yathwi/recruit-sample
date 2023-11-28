@@ -24,7 +24,7 @@ export const JobList: React.FC = () => {
       viewport={{ once: false, amount: 0 }}
       className=" max-w-[90%] mx-auto mt-10"
     >
-      <h2 className=" text-2xl lg:text-[70px] text-left">Job List</h2>{' '}
+      <h2 className=" text-2xl lg:text-[70px] text-left font-cinzel">Job List</h2>{' '}
       <div className=" flex items-center font-bold">
         <div className=" w-10 border-t-2 border-gray-500 mr-3" />
         <h3 className=" font-bold lg:text-lg">募集職種</h3>

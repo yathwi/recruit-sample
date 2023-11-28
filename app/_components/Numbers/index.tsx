@@ -84,7 +84,7 @@ export const Numbers: React.FC = () => {
         <div className="absolute top-0 left-0 w-full h-full bg-[#32727C] bg-opacity-80" />
 
         <div className=" max-w-[90%] relative mx-auto">
-          <h2 className=" text-xl pt-10 pc:text-[96px]">Numbers</h2>
+          <h2 className=" text-xl pt-10 font-cinzel pc:text-[96px]">Numbers</h2>
           <div className=" flex items-center font-bold">
             <div className=" w-10 border-t-2 border-white mr-3" />
             <p>数字で見るテックイノベイト</p>

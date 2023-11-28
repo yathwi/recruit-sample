@@ -46,7 +46,7 @@ export const Member: React.FC = () => {
         className="relative z-10"
       >
         <div className="lg:px-20 px-5 pt-10 pc:pt-20 pb-2 lg:pb-10 ml-[10%]">
-          <h2 className="pc:text-[70px] text-xl">{`Member's Voice`}</h2>
+          <h2 className="pc:text-[70px] font-cinzel text-xl">{`Member's Voice`}</h2>
           <div className=" lg:flex justify-between">
             <div className="flex items-center font-bold">
               <div className="w-10 border-t-2 border-gray-500 mr-3" />
