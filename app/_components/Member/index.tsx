@@ -24,7 +24,7 @@ export const Member: React.FC = () => {
   return (
     <div className="relative mt-20">
       {/* 背景 */}
-      <div className="bg-gray-100 mx-auto max-w-[80%] h-full absolute inset-y-0 left-0 right-0 z-0" />
+      <div className="bg-gray-100 mx-auto lg:max-w-[80%] max-w-[95%] h-full absolute inset-y-0 left-0 right-0 z-0" />
 
       <motion.div
         variants={{
@@ -45,7 +45,7 @@ export const Member: React.FC = () => {
         viewport={{ once: false, amount: 0 }}
         className="relative z-10"
       >
-        <div className="lg:px-20 px-5 pt-10 pc:pt-20 pb-10 ml-[10%]">
+        <div className="lg:px-20 px-5 pt-10 pc:pt-20 pb-2 lg:pb-10 ml-[10%]">
           <h2 className="pc:text-[70px] text-xl">{`Member's Voice`}</h2>
           <div className=" lg:flex justify-between">
             <div className="flex items-center font-bold">
@@ -57,15 +57,15 @@ export const Member: React.FC = () => {
             </div>
           </div>
         </div>
-        <div className=" ml-[20%]">
+        <div className=" ml-[13%] pb-10 lg:ml-[20%]">
           <Swiper
             spaceBetween={10}
-            slidesPerView={2.5}
+            slidesPerView={1.2}
             onSlideChange={() => console.log('slide change')}
             breakpoints={{
               // スクリーンの幅が640ピクセル以下の場合
               640: {
-                slidesPerView: 1, // モバイルではスライドを1つだけ表示
+                slidesPerView: 2.5, // モバイルではスライドを1つだけ表示
               },
               // それ以上の場合は2.5をデフォルト値として使用
             }}

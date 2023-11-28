@@ -22,13 +22,13 @@ export const Message: React.FC = () => {
       initial="offscreen" // 初期表示はoffscreen
       whileInView="onscreen" // 画面内に入ったらonscreen
       viewport={{ once: false, amount: 0 }}
-      className="  mt-10 mx-auto max-w-[90%]"
+      className="  mt-10 mx-auto lg:max-w-[90%] max-w-[95%]"
     >
       <h2 className=" text-xl lg:text-[70px] lg:text-right lg:mr-[5%]">Message</h2>{' '}
       <div className=" lg:flex justify-end">
-        <div className=" lg:max-w-[25%] mr-20 lg:mt-28">
-          <h3 className=" font-bold text-lg">テクノロジーで世界を動かす</h3>
-          <p className=" lg:mt-10 leading-[40px]">
+        <div className=" lg:max-w-[25%] lg:mr-20 lg:mt-28">
+          <h3 className=" font-bold lg:text-lg">テクノロジーで世界を動かす</h3>
+          <p className=" leading-8 mt-10  lg:leading-[40px]">
             私たちテックイノベイト株式会社は、
             <br />
             イノベーションを核とした技術ソリューションを提供するIT企業です。
@@ -41,7 +41,7 @@ export const Message: React.FC = () => {
             <Button name="more >>" />
           </div>
         </div>
-        <div className=" text-left lg:w-[60%]">
+        <div className=" text-left mt-5 lg:mt-0 lg:w-[60%]">
           <Image
             src="/add/message.jpg"
             alt="太光設備株式会社"

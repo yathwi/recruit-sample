@@ -58,15 +58,15 @@ export default function Header() {
           className="flex flex-col items-center z-50 absolute top-5 right-5 justify-center w-10 h-10"
         >
           <div
-            className={`h-1 w-8 bg-black mb-1 transition-transform ${
+            className={`h-1 w-8 bg-white mb-1 transition-transform ${
               isOpen ? 'rotate-45 translate-y-2.5' : ''
             }`}
           ></div>
           <div
-            className={`h-1 w-8 bg-black mb-1 transition-opacity ${isOpen ? 'opacity-0' : ''}`}
+            className={`h-1 w-8 bg-white mb-1 transition-opacity ${isOpen ? 'opacity-0' : ''}`}
           ></div>
           <div
-            className={`h-1 w-8 bg-black mb-1 transition-transform ${
+            className={`h-1 w-8 bg-white mb-1 transition-transform ${
               isOpen ? '-rotate-45 -translate-y-2.5' : ''
             }`}
           ></div>
