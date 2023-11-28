@@ -1,10 +1,29 @@
+'use client';
 import Image from 'next/image';
 import { Button } from '../ui/button';
 import { IoIosArrowDroprightCircle } from 'react-icons/io';
-
+import { motion } from 'framer-motion';
 export const JobList: React.FC = () => {
   return (
-    <div className=" max-w-[90%] mx-auto mt-10">
+    <motion.div
+      variants={{
+        offscreen: {
+          y: 50,
+          opacity: 0,
+        },
+        onscreen: {
+          y: 0,
+          opacity: 1,
+          transition: {
+            duration: 1,
+          },
+        },
+      }}
+      initial="offscreen" // 初期表示はoffscreen
+      whileInView="onscreen" // 画面内に入ったらonscreen
+      viewport={{ once: false, amount: 0 }}
+      className=" max-w-[90%] mx-auto mt-10"
+    >
       <h2 className=" text-[70px] text-left">Job List</h2>{' '}
       <div className=" flex items-center font-bold">
         <div className=" w-10 border-t-2 border-gray-500 mr-3" />
@@ -35,6 +54,6 @@ export const JobList: React.FC = () => {
           ENTRY
         </button>
       </div>
-    </div>
+    </motion.div>
   );
 };
