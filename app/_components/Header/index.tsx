@@ -33,7 +33,7 @@ export default function Header() {
       <div className="  ml-[5%] hidden  mx-auto absolute top-0 left-0 right-0 pt-8 pb-8 z-50 lg:flex items-center justify-between">
         <Link href="/" className="flex">
           <Image
-            src="/add/logo.png"
+            src="/add/logo2.png"
             alt="太光設備株式会社"
             className=" w-auto"
             width={60}
