@@ -90,10 +90,12 @@ export const Member: React.FC = () => {
           >
             {MemberList.map((member, index) => (
               <SwiperSlide key={index}>
-                <div className="">
-                  <Image src={member.src} alt={member.name} width={415} height={519} priority />
-                  <p className="mt-5 font-cinzel text-left">{member.name}</p>
-                </div>
+                <Link href="/">
+                  <div className="">
+                    <Image src={member.src} alt={member.name} width={415} height={519} priority />
+                    <p className="mt-5 font-cinzel text-left">{member.name}</p>
+                  </div>
+                </Link>
               </SwiperSlide>
             ))}
           </Swiper>
