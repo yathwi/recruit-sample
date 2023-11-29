@@ -5,6 +5,13 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import { motion } from 'framer-motion';
 
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/effect-cards';
+
+// import required modules
+import { EffectCards } from 'swiper/modules';
+
 const MemberList = [
   {
     name: '安井海都',
@@ -57,7 +64,7 @@ export const Member: React.FC = () => {
             </div>
           </div>
         </div>
-        <div className=" ml-[13%] pb-10 lg:ml-[20%]">
+        <div className="ml-[13%] pb-10 lg:ml-[20%] hidden lg:block">
           <Swiper
             spaceBetween={10}
             slidesPerView={1.2}
@@ -70,13 +77,30 @@ export const Member: React.FC = () => {
               // それ以上の場合は2.5をデフォルト値として使用
             }}
             onSwiper={(swiper: any) => console.log(swiper)}
-            className="  lg:mt-10"
+            className="  lg:mt-10 "
           >
             {MemberList.map((member, index) => (
               <SwiperSlide key={index}>
                 <div className="">
                   <Image src={member.src} alt={member.name} width={415} height={519} priority />
                   <p className="mt-5 font-cinzel text-left">{member.name}</p>
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
+        <div className=" mx-12 pb-10 lg:hidden">
+          <Swiper
+            effect={'cards'}
+            grabCursor={true}
+            modules={[EffectCards]}
+            className="  lg:mt-10 hidden lg:block"
+          >
+            {MemberList.map((member, index) => (
+              <SwiperSlide key={index}>
+                <div className="">
+                  <Image src={member.src} alt={member.name} width={415} height={519} priority />
+                  <p className="py-3 pl-3 font-cinzel text-left bg-white">{member.name}</p>
                 </div>
               </SwiperSlide>
             ))}
