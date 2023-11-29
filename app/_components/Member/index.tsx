@@ -14,16 +14,24 @@ import { EffectCards } from 'swiper/modules';
 
 const MemberList = [
   {
-    name: '安井海都',
-    src: '/add/peaple1.jpg',
+    name: 'Eriko Anzai',
+    src: '/add/peaple1-4x.jpg',
   },
   {
-    name: '安井海都',
-    src: '/add/peaple2.jpg',
+    name: 'Akiyoshi Takahashi',
+    src: '/add/peaple2-4x.jpg',
   },
   {
-    name: '安井海都',
-    src: '/add/peaple3.jpg',
+    name: 'Yuki Kato',
+    src: '/add/peaple3-4x.jpg',
+  },
+  {
+    name: 'Shogo Sato',
+    src: '/add/peaple4-4x.jpg',
+  },
+  {
+    name: 'Yuri Shimizu',
+    src: '/add/peaple5-4x.jpg',
   },
 ];
 

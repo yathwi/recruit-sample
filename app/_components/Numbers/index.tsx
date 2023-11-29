@@ -89,7 +89,7 @@ export const Numbers: React.FC = () => {
             <div className=" w-10 border-t-2 border-white mr-3" />
             <p className=" lg:text-lg">数字で見るテックイノベイト</p>
           </div>
-          <div className=" mt-10 lg:mt-20 lg:max-w-[75%]   mx-auto">
+          <div className=" mt-10 lg:mt-20 lg:max-w-[80%]   mx-auto">
             <InView
               as="div"
               onChange={startAnimation1}
