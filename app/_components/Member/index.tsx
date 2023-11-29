@@ -11,6 +11,7 @@ import 'swiper/css/effect-cards';
 
 // import required modules
 import { EffectCards } from 'swiper/modules';
+import Link from 'next/link';
 
 const MemberList = [
   {
@@ -39,7 +40,7 @@ export const Member: React.FC = () => {
   return (
     <div className="relative mt-20">
       {/* 背景 */}
-      <div className="bg-gray-100 mx-auto lg:max-w-[80%] max-w-[95%] h-full absolute inset-y-0 left-0 right-0 z-0" />
+      <div className="bg-gray-100 mx-auto md:max-w-[80%] max-w-[95%] h-full absolute inset-y-0 left-0 right-0 z-0" />
 
       <motion.div
         variants={{
@@ -60,19 +61,19 @@ export const Member: React.FC = () => {
         viewport={{ once: false, amount: 0 }}
         className="relative z-10"
       >
-        <div className="lg:px-20 px-5 pt-10 pc:pt-20 pb-2 lg:pb-10 ml-[10%]">
+        <div className="md:px-20 px-5 pt-10 pc:pt-20 pb-2 md:pb-10 ml-[10%]">
           <h2 className="pc:text-[70px] font-cinzel text-xl">{`Member's Voice`}</h2>
-          <div className=" lg:flex justify-between">
+          <div className=" md:flex justify-between">
             <div className="flex items-center font-cinzel">
               <div className="w-10 border-t-2 border-gray-500 mr-3" />
               <p>社員インタビュー</p>
             </div>
-            <div className=" flex items-center mr-[10%] mt-5 lg:mt-0 ml-5">
+            <div className=" flex items-center mr-[10%] mt-5 md:mt-0 ml-5">
               一覧をを見る <IoIosArrowDropright size={35} />
             </div>
           </div>
         </div>
-        <div className="ml-[13%] pb-10 lg:ml-[20%] hidden lg:block">
+        <div className="ml-[13%] pb-10 md:ml-[20%] hidden md:block">
           <Swiper
             spaceBetween={10}
             slidesPerView={1.2}
@@ -85,7 +86,7 @@ export const Member: React.FC = () => {
               // それ以上の場合は2.5をデフォルト値として使用
             }}
             onSwiper={(swiper: any) => console.log(swiper)}
-            className="  lg:mt-10 "
+            className="  md:mt-10 "
           >
             {MemberList.map((member, index) => (
               <SwiperSlide key={index}>
@@ -97,21 +98,32 @@ export const Member: React.FC = () => {
             ))}
           </Swiper>
         </div>
-        <div className=" mx-12 pb-10 lg:hidden">
+        <div className=" mx-12 pb-10 md:hidden">
           <Swiper
             effect={'cards'}
             grabCursor={true}
             modules={[EffectCards]}
-            className="  lg:mt-10 hidden lg:block"
+            className="  md:mt-10 hidden md:block"
           >
             {MemberList.map((member, index) => (
               <SwiperSlide key={index}>
-                <div className="">
-                  <Image src={member.src} alt={member.name} width={415} height={519} priority />
-                  <p className="py-3 pl-3 font-cinzel text-left bg-white">{member.name}</p>
-                </div>
+                <Link href="/">
+                  <div className=" w-fit">
+                    <Image src={member.src} alt={member.name} width={415} height={519} priority />
+                    <p className="py-3 pl-3 font-cinzel text-left bg-white">{member.name}</p>
+                  </div>
+                </Link>
               </SwiperSlide>
             ))}
+            <SwiperSlide>
+              <Link href="/">
+                <div className="  h-[519px] w-[415px] bg-white border-2">
+                  <div className=" flex items-center mr-[10%] mt-60 justify-center md:mt-0 ml-5">
+                    他のメンバーを見てみる <IoIosArrowDropright size={35} />
+                  </div>
+                </div>
+              </Link>
+            </SwiperSlide>
           </Swiper>
         </div>
       </motion.div>
