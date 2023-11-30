@@ -43,11 +43,11 @@ export default function Header() {
         </Link>
         <ul className=" flex items-center">
           {navItems.map((item) => (
-            <li key={item.path} className=" -mt-3 cursor-pointer hover:underline inline-block ml-4">
+            <li key={item.path} className=" -mt-3 cursor-pointer hover:underline inline-block ml-8">
               {item.name}
             </li>
           ))}
-          <button className=" hover:opacity-80 ml-4 px-16 text-lg  pt-12 pb-8 -mt-12 top-0 bg-[#28C7E4]">
+          <button className=" hover:opacity-8 font-cinzel ml-8 px-16 text-lg  pt-12 pb-8 -mt-12 top-0 bg-[#28C7E4]">
             ENTRY
           </button>
         </ul>
