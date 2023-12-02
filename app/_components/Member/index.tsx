@@ -119,8 +119,8 @@ export const Member: React.FC = () => {
             ))}
             <SwiperSlide>
               <Link href="/">
-                <div className="  h-[519px] w-[415px] bg-white border-2">
-                  <div className=" flex items-center mr-[10%] mt-60 justify-center md:mt-0 ml-5">
+                <div className="  h-auto w-[415px] bg-white border-2">
+                  <div className=" flex items-center mr-[10%] my-40 justify-center md:mt-0 ">
                     他のメンバーを見てみる <IoIosArrowDropright size={35} />
                   </div>
                 </div>
