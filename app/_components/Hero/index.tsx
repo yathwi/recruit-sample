@@ -75,7 +75,7 @@ export const Hero: React.FC = (props) => {
   return (
     <div
       id="header"
-      className=" flex relative  lg:h-[800px] h-[500px] lg:pt-72  pt-40 justify-center"
+      className=" flex relative  lg:h-[800px] h-[500px] lg:pt-72  pt-52 justify-center"
     >
       <Image src="/add/noisy-gradients.jpg" alt="太光設備株式会社" fill className=" object-cover" />
       <div className=" absolute text-white z-10">
