@@ -1,17 +1,20 @@
 'use client';
 import Image from 'next/image';
-import { IoIosArrowDropright } from 'react-icons/io';
+import { IoIosArrowDropright, IoIosArrowDropleft } from 'react-icons/io';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
+import {
+  HiOutlineArrowLongLeft,
+  HiOutlineArrowLongRight,
+  HiOutlineArrowLongUp,
+} from 'react-icons/hi2';
 import { motion } from 'framer-motion';
-
-// Import Swiper styles
-import 'swiper/css';
-import 'swiper/css/effect-cards';
-
+import { Navigation } from 'swiper/modules';
+import { BsArrowLeftCircle, BsArrowRightCircle } from 'react-icons/bs';
 // import required modules
 import { EffectCards } from 'swiper/modules';
 import Link from 'next/link';
+import { useRef } from 'react';
 
 const MemberList = [
   {
@@ -37,8 +40,10 @@ const MemberList = [
 ];
 
 export const Member: React.FC = () => {
+  const prevRef = useRef<HTMLDivElement>(null);
+  const nextRef = useRef<HTMLDivElement>(null);
   return (
-    <div className="relative mt-20">
+    <div className="relative lg:my-40 mt-20 ">
       {/* 背景 */}
       <div className="bg-gray-100 mx-auto md:max-w-[80%] max-w-[95%] h-full absolute inset-y-0 left-0 right-0 z-0" />
 
@@ -53,6 +58,7 @@ export const Member: React.FC = () => {
             opacity: 1,
             transition: {
               duration: 1,
+              delay: 1,
             },
           },
         }}
@@ -68,13 +74,32 @@ export const Member: React.FC = () => {
               <div className="w-10 border-t-2 border-gray-500 mr-3" />
               <p>社員インタビュー</p>
             </div>
-            <div className=" flex items-center mr-[10%] mt-5 md:mt-0 ml-5">
-              一覧をを見る <IoIosArrowDropright size={35} />
+            <div className=" flex items-center mr-[10%] hover:underline mt-5 md:mt-0 ml-5">
+              一覧を見る <IoIosArrowDropright size={30} />
             </div>
           </div>
         </div>
-        <div className="ml-[13%] pb-10 md:ml-[20%] hidden md:block">
+        <div className="ml-[13%] pb-10 md:ml-[20%] hidden items-end md:flex">
+          <div className=" mr-5">
+            <div ref={prevRef} className="hover:bg-gray-300 border-2 rounded-full">
+              <HiOutlineArrowLongLeft size={70} />
+            </div>
+            <div ref={nextRef} className="mt-3 hover:bg-gray-300 border-2 rounded-full">
+              <HiOutlineArrowLongRight size={70} />
+            </div>
+          </div>
           <Swiper
+            onInit={(swiper: any) => {
+              swiper.params.navigation.prevEl = prevRef.current;
+              swiper.params.navigation.nextEl = nextRef.current;
+              swiper.navigation.init();
+              swiper.navigation.update();
+            }}
+            navigation={{
+              prevEl: prevRef.current,
+              nextEl: nextRef.current,
+            }}
+            modules={[Navigation]}
             spaceBetween={10}
             slidesPerView={1.2}
             onSlideChange={() => console.log('slide change')}
@@ -91,9 +116,9 @@ export const Member: React.FC = () => {
             {MemberList.map((member, index) => (
               <SwiperSlide key={index}>
                 <Link href="/">
-                  <div className="">
+                  <div className=" h-auto w-[415px] bg-white border-2">
                     <Image src={member.src} alt={member.name} width={415} height={519} priority />
-                    <p className="mt-5 font-cinzel text-left">{member.name}</p>
+                    <p className="py-3 pl-3 font-cinzel text-left ">{member.name}</p>
                   </div>
                 </Link>
               </SwiperSlide>
@@ -110,7 +135,7 @@ export const Member: React.FC = () => {
             {MemberList.map((member, index) => (
               <SwiperSlide key={index}>
                 <Link href="/">
-                  <div className=" w-fit">
+                  <div className=" w-fit ">
                     <Image src={member.src} alt={member.name} width={415} height={519} priority />
                     <p className="py-3 pl-3 font-cinzel text-left bg-white">{member.name}</p>
                   </div>

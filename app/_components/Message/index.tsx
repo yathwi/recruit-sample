@@ -20,6 +20,7 @@ export const Message: React.FC = () => {
             opacity: 1,
             transition: {
               duration: 1,
+              delay: 0.5,
             },
           },
         }}
