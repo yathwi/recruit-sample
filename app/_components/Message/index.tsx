@@ -45,7 +45,25 @@ export const Message: React.FC = () => {
               <Button name="more >>" />
             </div>
           </div>
-          <div className=" text-left mt-5 lg:mt-0 lg:w-[60%]">
+          <motion.div
+            variants={{
+              offscreen: {
+                y: 50,
+                opacity: 0,
+              },
+              onscreen: {
+                y: 0,
+                opacity: 1,
+                transition: {
+                  duration: 1,
+                },
+              },
+            }}
+            initial="offscreen" // 初期表示はoffscreen
+            whileInView="onscreen" // 画面内に入ったらonscreen
+            viewport={{ once: false, amount: 0 }}
+            className=" text-left mt-5 lg:mt-0 lg:w-[60%]"
+          >
             <Image
               src="/add/message.jpg"
               alt="太光設備株式会社"
@@ -54,7 +72,7 @@ export const Message: React.FC = () => {
               height={433}
               priority
             />
-          </div>{' '}
+          </motion.div>{' '}
           <div className=" lg:hidden mt-10">
             <Button name="more >>" />
           </div>
