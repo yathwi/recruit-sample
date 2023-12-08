@@ -3,11 +3,8 @@ import Image from 'next/image';
 import { IoIosArrowDropright, IoIosArrowDropleft } from 'react-icons/io';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
-import {
-  HiOutlineArrowLongLeft,
-  HiOutlineArrowLongRight,
-  HiOutlineArrowLongUp,
-} from 'react-icons/hi2';
+import { HiOutlineArrowLongRight } from 'react-icons/hi2';
+import { PiArrowLeftThin, PiArrowRightThin } from 'react-icons/pi';
 import { motion } from 'framer-motion';
 import { Navigation } from 'swiper/modules';
 import { BsArrowLeftCircle, BsArrowRightCircle } from 'react-icons/bs';
@@ -81,11 +78,17 @@ export const Member: React.FC = () => {
         </div>
         <div className="ml-[13%] pb-10 md:ml-[20%] hidden items-end md:flex">
           <div className=" mr-5">
-            <div ref={prevRef} className="hover:bg-gray-300 border-2 rounded-full">
-              <HiOutlineArrowLongLeft size={70} />
+            <div
+              ref={prevRef}
+              className="hover:bg-gray-300 border-2 p-3 border-gray-400 rounded-full"
+            >
+              <PiArrowRightThin size={50} />
             </div>
-            <div ref={nextRef} className="mt-3 hover:bg-gray-300 border-2 rounded-full">
-              <HiOutlineArrowLongRight size={70} />
+            <div
+              ref={nextRef}
+              className="mt-3 hover:bg-gray-300 border-2 p-3 border-gray-400 rounded-full"
+            >
+              <PiArrowLeftThin size={50} />
             </div>
           </div>
           <Swiper
