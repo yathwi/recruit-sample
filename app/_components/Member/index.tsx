@@ -82,13 +82,13 @@ export const Member: React.FC = () => {
               ref={prevRef}
               className="hover:bg-gray-300 border-2 p-3 border-gray-400 rounded-full"
             >
-              <PiArrowRightThin size={50} />
+              <PiArrowLeftThin size={50} />
             </div>
             <div
               ref={nextRef}
               className="mt-3 hover:bg-gray-300 border-2 p-3 border-gray-400 rounded-full"
             >
-              <PiArrowLeftThin size={50} />
+              <PiArrowRightThin size={50} />
             </div>
           </div>
           <Swiper
