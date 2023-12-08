@@ -21,6 +21,7 @@ module.exports = {
         notoSans: ['Noto Sans JP'],
         ZKgothic: ['Zen Kaku Gothic New'],
         cinzel: ['Cinzel'],
+        mincho: ['YuMincho'],
       },
       fontWeight: {
         light: 300,

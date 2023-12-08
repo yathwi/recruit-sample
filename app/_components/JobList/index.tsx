@@ -29,7 +29,25 @@ export const JobList: React.FC = () => {
         <div className=" w-10 border-t-2 border-gray-500 mr-3" />
         <h3 className=" font-cinzel lg:text-lg">募集職種</h3>
       </div>
-      <div className=" mt-10 lg:mt-20 lg:flex justify-center border-t pt-10 lg:max-w-[80%] mx-auto">
+      <motion.div
+        variants={{
+          offscreen: {
+            y: 50,
+            opacity: 0,
+          },
+          onscreen: {
+            y: 0,
+            opacity: 1,
+            transition: {
+              duration: 1,
+            },
+          },
+        }}
+        initial="offscreen" // 初期表示はoffscreen
+        whileInView="onscreen" // 画面内に入ったらonscreen
+        viewport={{ once: false, amount: 0 }}
+        className=" mt-10 lg:mt-20 lg:flex justify-center border-t pt-10 lg:max-w-[80%] mx-auto"
+      >
         <div className="lg:w-[40%] lg:pr-10 lg:border-r-2">
           <div className=" flex items-center">
             <p className=" mr-2 text-lg font-cinzel">ソフトウェアエンジニア </p>
@@ -48,7 +66,7 @@ export const JobList: React.FC = () => {
             オンライン広告、SNSキャンペーン、SEO戦略を通じてブランドの認知度を向上。データ分析を基に効果的なマーケティング計画を立案・実施します。
           </p>
         </div>
-      </div>
+      </motion.div>
       <div className=" flex justify-center mt-10 lg:mt-20">
         <button className=" bg-[#28C7E4] hover:opacity-80 text-white font-cinzel py-5 px-20">
           ENTRY

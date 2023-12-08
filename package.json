@@ -21,6 +21,7 @@
     "node": ">=18.x"
   },
   "dependencies": {
+    "@motionone/utils": "^10.16.3",
     "@types/cheerio": "^0.22.31",
     "@types/node": "18.15.3",
     "@types/react": "18.0.28",
@@ -44,7 +45,10 @@
     "react-icons": "^4.12.0",
     "react-intersection-observer": "^9.5.3",
     "react-slick": "^0.29.0",
+    "react-tsparticles": "^2.12.2",
     "swiper": "^11.0.5",
+    "tsparticles-engine": "^2.12.0",
+    "tsparticles-slim": "^2.12.0",
     "typescript": "4.9.5"
   },
   "devDependencies": {
