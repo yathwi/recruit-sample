@@ -1,14 +1,12 @@
 'use client';
 import Image from 'next/image';
-import { IoIosArrowDropright, IoIosArrowDropleft } from 'react-icons/io';
+import { IoIosArrowDropright } from 'react-icons/io';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
-import { HiOutlineArrowLongRight } from 'react-icons/hi2';
 import { PiArrowLeftThin, PiArrowRightThin } from 'react-icons/pi';
 import { motion } from 'framer-motion';
 import { Navigation } from 'swiper/modules';
-import { BsArrowLeftCircle, BsArrowRightCircle } from 'react-icons/bs';
-// import required modules
+
 import { EffectCards } from 'swiper/modules';
 import Link from 'next/link';
 import { useRef } from 'react';
@@ -40,8 +38,7 @@ export const Member: React.FC = () => {
   const prevRef = useRef<HTMLDivElement>(null);
   const nextRef = useRef<HTMLDivElement>(null);
   return (
-    <div className="relative lg:my-40 mt-20 ">
-      {/* 背景 */}
+    <div className="relative lg:my-40 mt-10 md:mt-20 ">
       <div className="bg-gray-100 mx-auto md:max-w-[80%] max-w-[95%] h-full absolute inset-y-0 left-0 right-0 z-0" />
 
       <motion.div
@@ -76,7 +73,7 @@ export const Member: React.FC = () => {
             </div>
           </div>
         </div>
-        <div className="ml-[13%] pb-10 md:ml-[20%] hidden items-end md:flex">
+        <div className="ml-[13%] pb-10 md:ml-[20%] hidden md:items-end md:flex">
           <div className=" mr-5">
             <div
               ref={prevRef}
@@ -129,16 +126,11 @@ export const Member: React.FC = () => {
           </Swiper>
         </div>
         <div className=" mx-12 pb-10 md:hidden">
-          <Swiper
-            effect={'cards'}
-            grabCursor={true}
-            modules={[EffectCards]}
-            className="  md:mt-10 hidden md:block"
-          >
+          <Swiper effect={'cards'} grabCursor={true} modules={[EffectCards]} className="">
             {MemberList.map((member, index) => (
               <SwiperSlide key={index}>
                 <Link href="/">
-                  <div className=" w-fit ">
+                  <div className=" w-fit">
                     <Image src={member.src} alt={member.name} width={415} height={519} priority />
                     <p className="py-3 pl-3 font-cinzel text-left bg-white">{member.name}</p>
                   </div>
