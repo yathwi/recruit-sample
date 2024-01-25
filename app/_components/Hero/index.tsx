@@ -3,6 +3,8 @@ import Image from 'next/image';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 import { useRef, useEffect } from 'react';
+import { useThree, useFrame, Canvas } from '@react-three/fiber';
+import { useScroll, ScrollControls, Scroll } from '@react-three/drei';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -22,30 +24,24 @@ export const Hero: React.FC = (props) => {
       opacity: 0,
     });
     // Section 1 H2
-    gsap.from('#h2', {
+    gsap.to('#image', {
       scrollTrigger: {
-        trigger: '#h2',
-        start: 'top bottom',
-        end: 'top 400px',
-        // start: "top",
-        // end: 'bottom',
-        scrub: 1,
-        // toggleActions: "play complete none reset"
+        trigger: '#image',
+        start: 'top top',
+        end: 'bottom top',
+        scrub: true,
       },
-      xPercent: -100,
+
       opacity: 0,
     });
-    // Execution heading
-    gsap.from('#h3', {
+    gsap.to('#image2', {
       scrollTrigger: {
-        trigger: '#h3',
-        start: 'top bottom+=100px',
-        // scrub: true
-        toggleActions: 'play complete none reset',
+        trigger: '#image2',
+        start: 'top top',
+        end: 'bottom top',
+        scrub: true,
       },
-      xPercent: 100,
-      opacity: 0.5,
-      duration: 1,
+      opacity: 0,
     });
     // Custom trigger
     ScrollTrigger.create({
@@ -75,11 +71,24 @@ export const Hero: React.FC = (props) => {
   return (
     <div
       id="header"
-      className=" flex relative  lg:h-[800px] h-[500px] lg:pt-72  pt-52 justify-center"
+      className=" flex relative  lg:h-[1200px] h-[500px] lg:pt-72  pt-52 justify-center"
     >
-      <Image src="/add/noisy-gradients.jpg" alt="太光設備株式会社" fill className=" object-cover" />
+      <Image
+        id="image2"
+        src="/add/news1.jpg"
+        alt="太光設備株式会社"
+        fill
+        className=" object-cover"
+      />
+      <Image
+        id="image"
+        src="/add/noisy-gradients.jpg"
+        alt="太光設備株式会社"
+        fill
+        className=" object-cover"
+      />
       <div className=" absolute text-white z-10">
-        <h1 id="h1" className=" px-2 lg:text-[110px] text-2xl leading-tight font-cinzel">
+        <h1 id="h1" className=" px-2 lg:text-[110px] text-2xl leading-tight">
           Driving the World
           <br />
           with Technology.
