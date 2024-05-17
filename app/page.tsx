@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Head from 'next/head';
-import Header from './_components/Header';
+import Header from './_components/PageHeader';
 import { Hero } from './_components/Hero';
 import { Message } from './_components/Message';
 import { Member } from './_components/Member';

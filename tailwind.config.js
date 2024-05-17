@@ -1,11 +1,4 @@
 /** @type {import('tailwindcss').Config} */
-// module.exports = {
-//   content: [],
-//   theme: {
-//     extend: {},
-//   },
-//   plugins: [],
-// };
 
 module.exports = {
   content: [
@@ -36,6 +29,13 @@ module.exports = {
           gold: '#C09F2E',
           gray: '#D1C9B6',
         },
+        green: {
+          main: '#EFF5EF',
+          dark: '#185142',
+          500: '#34947A',
+          600: '#287D66',
+        },
+
         pink: {
           50: '#FCF8FA',
           600: '#CC8DAD',
@@ -64,14 +64,14 @@ module.exports = {
         '2xl': '2.5rem', // 36px
         '3xl': '3rem',
       },
+      screens: {
+        ph: '320px',
+        pc: '750px',
+        dt: '1350px',
+      },
     },
   },
 
-  screens: {
-    ph: '320px',
-    pc: '750px',
-    dt: '1350px',
-  },
   extend: {
     boxShadow: {
       'text-shadow': '2px 2px 2px rgba(0, 0, 0, 0.2)',

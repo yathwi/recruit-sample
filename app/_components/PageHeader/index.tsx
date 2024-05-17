@@ -5,20 +5,20 @@ import styles from './index.module.css';
 import { useState } from 'react';
 const navItems = [
   {
-    name: 'メッセージ',
-    path: 'message',
+    name: '事業内容',
+    path: 'business',
   },
   {
-    name: ' 社員インタビュー',
-    path: 'interview',
+    name: ' 施工事例',
+    path: 'works',
+  },
+  {
+    name: '社員紹介',
+    path: 'members',
   },
   {
     name: '数字で見る',
-    path: 'numbers',
-  },
-  {
-    name: '募集職種',
-    path: 'recruit',
+    path: '募集要項',
   },
   {
     name: 'お知らせ',
