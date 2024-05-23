@@ -4,8 +4,6 @@ import Script from 'next/script';
 import Footer from '@/app/_components/Footer';
 import Header from '@/app/_components/PageHeader';
 import './globals.css';
-import styles from './layout.module.css';
-import Favicon from '@/public/logo.png';
 
 export const revalidate = 60;
 
@@ -24,7 +22,6 @@ export default async function RootLayout({ children }: Props) {
         src={`//js.hs-scripts.com/${process.env.HUBSPOT_PORTAL_ID}.js`}
       ></Script>
       <body>
-        <Header />
         <main>{children}</main>
         <Footer />
       </body>

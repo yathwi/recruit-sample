@@ -26,10 +26,10 @@ const navItems = [
   },
 ];
 
-export default function Header() {
+export default function PageHeaderTextBlack() {
   const [isOpen, setIsOpen] = useState(false);
   return (
-    <header className="  text-white">
+    <header className=" ">
       <div className="  ml-[5%] hidden  font-oswald font-bold mx-auto absolute top-0 left-0 right-0 pt-8 pb-8 z-50 lg:flex items-center justify-between">
         <Link href="/" className="flex">
           <Image src="/top/logo.png" alt="株式会社NIPPOロゴ" className=" " width={99} height={29} />
@@ -43,7 +43,7 @@ export default function Header() {
               {item.name}
             </li>
           ))}
-          <button className=" hover:opacity-8 ml-8 px-16 text-lg  pt-12 pb-8 -mt-12 top-0 bg-green-500">
+          <button className=" hover:opacity-8 ml-8 px-16 text-white text-lg  pt-12 pb-8 -mt-12 top-0 bg-green-500">
             ENTRY
           </button>
         </ul>

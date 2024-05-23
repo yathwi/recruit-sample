@@ -3,32 +3,61 @@ import { InView } from 'react-intersection-observer';
 import Image from 'next/image';
 import { useMotionValue, motion, useTransform, animate } from 'framer-motion';
 import { useEffect } from 'react';
+import path from 'path';
 
 const row2 = [
   {
-    id: 'ChildcareLeaveCount',
+    id: 'ReturnRate',
+    name: '年間賞与',
+    value: 6.33,
+    unit: 'ヶ月分',
+  },
+  {
+    id: 'ReturnRate',
+    name: '平均勤続年数',
+    value: 17.6,
+    unit: '年',
+  },
+];
+
+const row4 = [
+  {
+    id: 'paidLeave',
+    name: '平均有給取得日数',
+    value: 13.1,
+    unit: '日',
+    path: '/top/numbers/icon-4.jpg',
+  },
+  {
+    id: 'overtimeWork',
+    name: '平均時間外勤務時間',
+    value: 27.6,
+    unit: '時間/月',
+    path: '/top/numbers/icon-4.jpg',
+  },
+  {
+    id: 'maternityLeave',
     name: '育休取得率',
-    value: 90,
-    unit: '%',
+    value: 100,
+    unit: '％',
+    path: '/top/numbers/icon-4.jpg',
   },
   {
-    id: 'ReturnRateCount',
+    id: 'ReturnRate',
     name: '復職率',
-    value: 85,
-    unit: '%',
+    value: 100,
+    unit: '％',
+    path: '/top/numbers/icon-4.jpg',
   },
-  {
-    id: 'OverWorkHoursCount',
-    name: '年間平均残業時間',
-    value: 20,
-    unit: '時間',
-  },
-  { id: 'TrainingRateCount', name: '研修受講率', value: 95, unit: '%' },
 ];
 
 export const Numbers: React.FC = () => {
   const count = useMotionValue(0);
   const age = useTransform(count, (latest) => Math.round(latest));
+  const count2 = useMotionValue(0);
+  const license = useTransform(count2, (latest) => Math.round(latest));
+  const count3 = useMotionValue(0);
+  const salary = useTransform(count3, (latest) => Math.round(latest));
 
   const turnoverCount = useMotionValue(0);
   const turnover = useTransform(turnoverCount, (latest) => Math.round(latest));
@@ -38,10 +67,12 @@ export const Numbers: React.FC = () => {
 
   const startAnimation1 = (InView: boolean) => {
     if (InView) {
-      animate(count, 29, {
+      animate(count, 4375, {
         duration: 2,
         delay: 0.5,
       });
+      animate(count2, 1055, { duration: 2, delay: 0.5 });
+      animate(count3, 1002, { duration: 2, delay: 0.5 });
       animate(turnoverCount, 5, { duration: 2, delay: 0.5 });
       animate(maleFemaleCount, 50, { duration: 2, delay: 0.5 });
     }
@@ -49,9 +80,15 @@ export const Numbers: React.FC = () => {
 
   // eslint-disable-next-line react-hooks/rules-of-hooks
   const motionValues = row2.map(() => useMotionValue(0));
-  const transformedValues = motionValues.map((mv) =>
+  const transformedValues = motionValues.map((mv, i) =>
     // eslint-disable-next-line react-hooks/rules-of-hooks
-    useTransform(mv, (latest) => Math.round(latest)),
+    useTransform(mv, (latest) => (i === 0 ? latest.toFixed(2) : latest.toFixed(1))),
+  );
+  // eslint-disable-next-line react-hooks/rules-of-hooks
+  const motionValues2 = row4.map(() => useMotionValue(0));
+  const transformedValues2 = motionValues2.map((mv, i) =>
+    // eslint-disable-next-line react-hooks/rules-of-hooks
+    useTransform(mv, (latest) => (i === 0 || i === 1 ? latest.toFixed(1) : latest.toFixed(0))),
   );
 
   const startAnimation2 = () => {
@@ -59,59 +96,88 @@ export const Numbers: React.FC = () => {
       animate(mv, row2[index].value, { duration: 2, delay: 0.5 });
     });
   };
-
-  const nationalityCount = useMotionValue(0);
-  const nationality = useTransform(nationalityCount, (latest) => Math.round(latest));
+  const paidleaveCount = useMotionValue(0);
+  const paidleave = useTransform(paidleaveCount, (latest) => Math.round(latest));
 
   const successRateCount = useMotionValue(0);
   const successRate = useTransform(successRateCount, (latest) => Math.round(latest));
 
-  const startAnimation3 = (InView: boolean) => {
-    if (InView) {
-      animate(nationalityCount, 15, {
-        duration: 2,
-        delay: 0.5,
-      });
-      animate(successRateCount, 30, { duration: 2, delay: 0.5 });
-    }
+  const startAnimation3 = () => {
+    motionValues2.forEach((mv, index) => {
+      animate(mv, row4[index].value, { duration: 2, delay: 0.5 });
+    });
   };
   return (
-    <div className=" w-full mt-20 bg-[#32727C] lg:h-[1250px] h-[1550px] bg-opacity-80 relative text-white">
+    <div className=" w-full mt-20 bg-[#32727C] lg:h-[1800px] h-[1550px] bg-opacity-80 relative text-[#34947A]">
       <div
         className="w-full absolute h-full bg-no-repeat bg-cover bg-center"
-        style={{ backgroundImage: "url('/add/bg-numbers.jpg')" }}
+        style={{ backgroundImage: "url('/top/bg-data.jpg')" }}
       >
-        <div className="absolute top-0 left-0 w-full h-full bg-[#32727C] bg-opacity-80" />
+        <div className="absolute top-0 left-0 w-full h-full  bg-opacity-80" />
 
         <div className=" max-w-[90%] relative mx-auto">
-          <h2 className=" text-xl pt-10 font-cinzel lg:text-[96px] font-bold">Numbers</h2>
-          <div className=" flex items-center font-cinzel">
-            <div className=" w-10 border-t-2 border-white mr-3" />
-            <p className=" lg:text-lg">数字で見るテックイノベイト</p>
+          <div className=" relative h-40 ">
+            <h3 className=" absolute -ml-5 text-[96px] text-white font-bold ">DATA</h3>
+            <h2 className=" text-2xl absolute z-10 font-bold pt-20">数字で見るNIPPO</h2>
           </div>
-          <div className=" mt-10 lg:mt-20 lg:max-w-[80%]   mx-auto">
+          <div className=" mt-10 lg:mt-10 mx-auto">
             <InView
               as="div"
               onChange={startAnimation1}
-              className=" mx-auto border-t pt-10 flex-wrap border-white flex justify-center"
+              className=" mx-auto pt-10 border-b-2 flex-wrap  flex justify-center"
             >
-              <div className="lg:w-60 w-1/2 text-center">
-                <p>平均年齢</p>
+              <div className=" w-1/3 text-lg text-center">
+                <p>連結売上高（2022年度）</p>
+                <Image
+                  src="/top/numbers/icon-1.png"
+                  className=" mx-auto pt-5"
+                  width={93}
+                  height={93}
+                  alt="売上"
+                />
                 <p>
-                  <motion.span className=" text-[96px] font-bold">{age}</motion.span>歳
+                  <motion.span className=" text-[74px] font-bold">{age}</motion.span> 億円
                 </p>
               </div>
-              <div className="lg:w-60 w-1/2 lg:hidden block text-center">
-                <p className=" ">離職率</p>
+              <div className=" w-1/3 border-x-2  text-lg text-center">
+                <p>1級土木有資格者</p>
+                <Image
+                  src="/top/numbers/icon-2.png"
+                  className=" mx-auto pt-5"
+                  width={182}
+                  height={107}
+                  alt="資格者"
+                />
+
                 <p>
-                  <motion.span className=" text-[96px] font-bold">{turnover}</motion.span>%
+                  <motion.span className=" text-[74px] font-bold">{license}</motion.span>人
                 </p>
               </div>
-              <div className=" lg:w-80 mb-10 lg:mb-10">
-                <p className=" text-center">男女比率</p>
-                <div className=" flex mt-10">
+              <div className=" w-1/3 text-lg text-center">
+                <p>平均年収</p>
+                <Image
+                  src="/top/numbers/icon-3.png"
+                  className=" mx-auto pt-5"
+                  width={69}
+                  height={112}
+                  alt="資格者"
+                />
+                <p className=" text-base">NIPPO総合職平均</p>
+                <p className="-mt-7">
+                  <motion.span className=" text-[74px]  font-bold">{salary}</motion.span>万円
+                </p>
+              </div>
+            </InView>
+            <InView
+              as="div"
+              onChange={(inView) => inView && startAnimation2()}
+              className=" pt-10 border-white flex flex-wrap justify-center"
+            >
+              <div className=" mb-10   w-1/2 ">
+                <p className=" text-center">連結売上高構成比</p>
+                <div className=" flex justify-center mt-10">
                   <div>
-                    <Image src="/add/graph-1.png" width={100} height={100} alt="graph" />
+                    <Image src="/add/graph-1.png" width={300} height={300} alt="graph" />
                   </div>
                   <div className=" -mt-5 leading-9">
                     <p>
@@ -125,11 +191,23 @@ export const Numbers: React.FC = () => {
                   </div>
                 </div>
               </div>
-              <div className="w-60 hidden lg:block text-center">
-                <p className=" ">離職率</p>
-                <p>
-                  <motion.span className=" text-[96px] font-bold">{turnover}</motion.span>%
-                </p>
+              <div className=" mb-10 mx-auto w-1/2 ">
+                <p className=" text-center">官民受注割合（NIPPO単体）</p>
+                <div className=" flex justify-center mt-10">
+                  <div>
+                    <Image src="/add/graph-1.png" width={300} height={300} alt="graph" />
+                  </div>
+                  <div className=" -mt-5 leading-9">
+                    <p>
+                      男性
+                      <motion.span className=" text-[64px] px-2">{maleFemale}</motion.span>%
+                    </p>
+                    <p>
+                      女性
+                      <motion.span className=" text-[64px] px-2">{maleFemale}</motion.span>%
+                    </p>
+                  </div>
+                </div>
               </div>
             </InView>
             <InView
@@ -137,51 +215,62 @@ export const Numbers: React.FC = () => {
               onChange={(inView) => inView && startAnimation2()}
               className="border-t pt-10 border-white flex flex-wrap justify-center"
             >
-              {row2.map((item, index) => (
-                <div key={item.id} className=" lg:w-60 w-1/2 text-center">
-                  <p>{item.name}</p>
-                  <p>
-                    <motion.span className=" text-[96px] font-bold">
-                      {transformedValues[index]}
-                    </motion.span>
-                    {item.unit}
-                  </p>
+              <div className=" mb-10 mx-auto w-1/2 ">
+                <p className=" text-center">官民受注割合（NIPPO単体）</p>
+                <div className=" flex justify-center mt-10">
+                  <div>
+                    <Image src="/add/graph-1.png" width={300} height={300} alt="graph" />
+                  </div>
+                  <div className=" -mt-5 leading-9">
+                    <p>
+                      男性
+                      <motion.span className=" text-[64px] px-2">{maleFemale}</motion.span>%
+                    </p>
+                    <p>
+                      女性
+                      <motion.span className=" text-[64px] px-2">{maleFemale}</motion.span>%
+                    </p>
+                  </div>
                 </div>
-              ))}
+              </div>
+              <div className="w-1/2 flex">
+                {row2.map((item, index) => (
+                  <div key={item.id} className="  w-1/2 text-center">
+                    <p>{item.name}</p>
+                    <p>
+                      <motion.span className=" text-[96px] font-bold">
+                        {transformedValues[index]}
+                      </motion.span>
+                      {item.unit}
+                    </p>
+                  </div>
+                ))}
+              </div>
             </InView>
             <InView
               as="div"
               onChange={startAnimation3}
-              className=" border-t pt-10 border-white lg:flex justify-center items-center lg:px-20"
+              className="border-t pt-10 border-white flex flex-wrap justify-center"
             >
-              <div className=" w-80 text-center">
-                <div>
-                  <p className=" text-center">社員の国際性</p>
-                </div>
-                <div className=" flex justify-center relative items-center">
-                  <div className=" absolute">
-                    <Image src="/add/map-bg.png" width={373} height={195} alt="graph" />
+              <div className=" w-full px-10 flex">
+                {row4.map((item, index) => (
+                  <div key={item.id} className="  w-1/4 text-center">
+                    <p>{item.name}</p>
+                    <Image
+                      src={item.path}
+                      width={120}
+                      height={120}
+                      alt="icon"
+                      className=" mx-auto pt-5"
+                    />
+                    <p>
+                      <motion.span className=" text-[96px] font-bold">
+                        {transformedValues2[index]}
+                      </motion.span>
+                      {item.unit}
+                    </p>
                   </div>
-
-                  <motion.p className="text-[96px] font-bold mr-2">{nationality}</motion.p>
-                  <p>
-                    カ国以上の国籍を
-                    <br />
-                    持つ社員が在籍
-                  </p>
-                </div>
-              </div>
-              <div className=" w-80 text-center">
-                <div>
-                  <p>
-                    社員の社内起業・
-                    <br />
-                    新規プロジェクト提案成功率
-                  </p>
-                </div>
-                <p>
-                  <motion.span className="text-[96px] font-bold mr-2">{successRate}</motion.span>%
-                </p>
+                ))}
               </div>
             </InView>
           </div>

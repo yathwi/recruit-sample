@@ -7,20 +7,26 @@ import { Member } from './_components/Member';
 import { Numbers } from './_components/Numbers';
 import { JobList } from './_components/JobList';
 import { News } from './_components/News';
-import { Ctv } from './_components/Ctv';
+import { Cta } from './_components/Cta';
+import { Business } from './_components/Business';
+import { Case } from './_components/Case';
+import { Company } from './_components/Company';
 
 export const revalidate = 60;
 
 export default async function Page() {
   return (
-    <div className=" font-mincho">
+    <div className=" font-hiragino">
+      <Header />
       <Hero />
       <Message />
+      <Business />
+      <Case />
       <Member />
       <Numbers />
-      <JobList />
+      <Company />
       <News />
-      <Ctv />
+      <Cta />
     </div>
   );
 }

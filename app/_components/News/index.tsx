@@ -1,49 +1,55 @@
+'use client';
 import Image from 'next/image';
-import { Button } from '../ui/button';
-import { IoIosArrowDroprightCircle } from 'react-icons/io';
+import Link from 'next/link';
+import { motion } from 'framer-motion';
+
+const items = [
+  { name: '土木', path: 'civil-engineering', image: '/top/business-1.jpg' },
+  { name: '建築', path: 'architecture', image: '/top/business-2.jpg' },
+  { name: '機電', path: 'environment', image: '/top/business-3.jpg' },
+];
 
 export const News: React.FC = () => {
   return (
-    <div className=" mt-10 pb-10 lg:mt-40 lg:h-[800px] relative bg-black">
-      <div className=" absolute hidden lg:block -top-20 right-10">
-        <Image
-          src="/add/news1.jpg"
-          alt="太光設備株式会社"
-          className=" w-auto"
-          width={600}
-          height={300}
-          priority
-        />
-      </div>
-
-      <div className=" absolute top-60 hidden lg:block left-0">
-        <Image
-          src="/add/news2.jpg"
-          alt="太光設備株式会社"
-          className=" w-auto"
-          width={300}
-          height={100}
-          priority
-        />
-      </div>
-      <div className=" lg:ml-[30%] lg:flex max-w-[90%] mx-auto lg:w-full pt-10 lg:pt-80">
-        <div className=" mr-5">
-          <h2 className=" text-2xl font-cinzel lg:text-[70px] text-left text-white">News</h2>{' '}
-          <div className=" flex items-center font-cinzel">
-            <div className=" w-10 border-t-2 border-gray-500 mr-3" />
-            <h3 className=" font-cinzel lg:text-lg text-white">お知らせ</h3>
+    <div className=" py-20">
+      <div className=" flex max-w-[85%] mx-auto">
+        <div className=" relative w-1/3 h-40 ">
+          <div>
+            <h3 className=" absolute -ml-5 text-[96px] font-bold text-[#F4F4F4]">NEWS</h3>
+            <h2 className=" text-2xl absolute z-10 font-bold pt-20">お知らせ</h2>
           </div>
         </div>
-        <div className=" mt-5 lg:mt-32 text-white lg:w-[500px]">
-          <div className=" border-t  py-5">
-            <p>2023/01/01</p>
-            <p>20XX年度 新卒採用エントリー受付開始しました</p>
+        <motion.div
+          variants={{
+            offscreen: {
+              y: 100,
+              opacity: 0,
+            },
+            onscreen: {
+              y: 0,
+              opacity: 1,
+              transition: {
+                duration: 1,
+                delay: 0.5,
+              },
+            },
+          }}
+          initial="offscreen" // 初期表示はoffscreen
+          whileInView="onscreen" // 画面内に入ったらonscreen
+          viewport={{ once: false, amount: 0 }}
+          className="  mt-20  w-full ml-20"
+        >
+          <div className=" mt-5">
+            <div className=" border-b  py-5">
+              <p>2023/01/01</p>
+              <p>20XX年度 新卒採用エントリー受付開始しました</p>
+            </div>
+            <div className="  pl-5 border-b py-5">
+              <p>2023/01/01</p>
+              <p>20XX年度 新卒採用エントリー受付開始しました</p>
+            </div>
           </div>
-          <div className=" border-y py-5">
-            <p>2023/01/01</p>
-            <p>20XX年度 新卒採用エントリー受付開始しました</p>
-          </div>
-        </div>
+        </motion.div>
       </div>
     </div>
   );

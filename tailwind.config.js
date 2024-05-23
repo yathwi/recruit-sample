@@ -1,5 +1,4 @@
 /** @type {import('tailwindcss').Config} */
-
 module.exports = {
   content: [
     './src/**/*.{js,ts,jsx,tsx}',
@@ -13,8 +12,10 @@ module.exports = {
         crossten: ['Crossten'],
         notoSans: ['Noto Sans JP'],
         ZKgothic: ['Zen Kaku Gothic New'],
+        oswald: ['Oswald'],
         cinzel: ['Cinzel'],
         mincho: ['YuMincho'],
+        hiragino: ['Hiragino Sans', 'sans-serif'], // Hiragino Sansフォントを追加
       },
       fontWeight: {
         light: 300,
@@ -35,7 +36,6 @@ module.exports = {
           500: '#34947A',
           600: '#287D66',
         },
-
         pink: {
           50: '#FCF8FA',
           600: '#CC8DAD',
@@ -70,9 +70,6 @@ module.exports = {
         dt: '1350px',
       },
     },
-  },
-
-  extend: {
     boxShadow: {
       'text-shadow': '2px 2px 2px rgba(0, 0, 0, 0.2)',
     },
