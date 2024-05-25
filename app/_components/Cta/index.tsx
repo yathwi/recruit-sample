@@ -3,7 +3,7 @@ import Link from 'next/link';
 export const Cta: React.FC = () => {
   return (
     <Link href="/entry">
-      <div className="  hover:opacity-80 w-full py-20 text-white">
+      <div className="  hover:opacity-80 w-full text-white">
         <Image
           src="/top/cta.png"
           width={1280}
