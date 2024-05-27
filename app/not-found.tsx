@@ -12,11 +12,12 @@ export default function Page() {
     <div className=" bg-green-main">
       <PageHeaderTextBlack />
       <div className=" text-center pt-40">
-        <h1 className="text-[48px]">404 Page Not Found</h1>
+        <h1 className="text-[48px] font-bold">404 Page Not Found</h1>
         <div className=" h-1 mx-auto my-10 w-40 bg-green-500" />
-        <p className="text-2xl">お探しのページが見つかりませんでした。</p>
+        <p className="text-2xl font-bold">お探しのページが見つかりませんでした。</p>
         <p>
           お探しのページは一時的にアクセスができない状況にあるか、移動もしくは削除された可能性があります。
+          <br />
           直接アドレスを入力された場合は、アドレスが正しく入力されているかもう一度ご確認下さい。
         </p>
       </div>
@@ -26,7 +27,7 @@ export default function Page() {
         </Link>
       </div>
       <Breadcrumb items={Imtes} />
-      <Cta />{' '}
+      <Cta />
     </div>
   );
 }

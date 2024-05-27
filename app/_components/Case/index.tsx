@@ -12,8 +12,8 @@ const items = [
 
 export const Case: React.FC = () => {
   return (
-    <div className=" h-screen">
-      <div className=" w-1/2 bg-[#34947A] h-[75%] text-white mt-20">
+    <div className=" h-[750px]">
+      <div className=" w-1/2 bg-[#34947A] h-[90%] text-white mt-20">
         <div className="ml-[12.5%]">
           <div className=" relative h-40 ">
             <h3 className=" absolute -ml-5 text-[96px] text-[#71B4A2] font-bold ">CASE</h3>
@@ -29,22 +29,21 @@ export const Case: React.FC = () => {
       <motion.div
         variants={{
           offscreen: {
-            y: 100,
+            y: 20,
             opacity: 0,
           },
           onscreen: {
             y: 0,
             opacity: 1,
             transition: {
-              duration: 1,
-              delay: 0.5,
+              duration: 0.5,
             },
           },
         }}
         initial="offscreen" // 初期表示はoffscreen
         whileInView="onscreen" // 画面内に入ったらonscreen
-        viewport={{ once: false, amount: 0 }}
-        className="   mx-auto lg:max-w-[90%] ml-[12.5%] absolute z-10 max-w-[95%] pt-10 "
+        viewport={{ once: false, amount: 0.5 }}
+        className="   mx-auto lg:max-w-[90%] max-w-[95%]  "
       >
         <div className="flex -mt-96 gap-10 justify-center">
           {items.map((item) => (

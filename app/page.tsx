@@ -12,7 +12,7 @@ import { Business } from './_components/Business';
 import { Case } from './_components/Case';
 import { Company } from './_components/Company';
 
-export const revalidate = 60;
+export const revalidate = 1200;
 
 export default async function Page() {
   return (

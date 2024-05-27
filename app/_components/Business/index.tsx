@@ -31,27 +31,27 @@ export const Business: React.FC = () => {
       <motion.div
         variants={{
           offscreen: {
-            y: 100,
+            y: 20,
             opacity: 0,
           },
           onscreen: {
             y: 0,
             opacity: 1,
             transition: {
-              duration: 1,
+              duration: 0.5,
               delay: 0.5,
             },
           },
         }}
         initial="offscreen" // 初期表示はoffscreen
         whileInView="onscreen" // 画面内に入ったらonscreen
-        viewport={{ once: false, amount: 0 }}
-        className="   mx-auto lg:max-w-[90%] max-w-[95%] pt-10 "
+        viewport={{ once: false, amount: 0.5 }}
+        className="   mx-auto lg:max-w-[90%] max-w-[95%] pt-20 "
       >
         <div className="flex justify-center">
           {items.map((item) => (
             <Link href={item.path} key={item.path} className=" hover:opacity-80">
-              <Image src={item.image} alt={item.name} width={250} height={250} />
+              <Image src={item.image} alt={item.name} width={280} height={280} />
             </Link>
           ))}
         </div>

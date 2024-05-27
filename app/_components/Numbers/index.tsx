@@ -53,7 +53,7 @@ const row4 = [
 
 export const Numbers: React.FC = () => {
   const count = useMotionValue(0);
-  const age = useTransform(count, (latest) => Math.round(latest));
+  const earnings = useTransform(count, (latest) => Math.round(latest));
   const count2 = useMotionValue(0);
   const license = useTransform(count2, (latest) => Math.round(latest));
   const count3 = useMotionValue(0);
@@ -108,7 +108,7 @@ export const Numbers: React.FC = () => {
     });
   };
   return (
-    <div className=" w-full mt-20 bg-[#32727C] lg:h-[1800px] h-[1550px] bg-opacity-80 relative text-[#34947A]">
+    <div className=" w-full mt-20 bg-[#32727C] lg:h-[1850px] h-[1550px] bg-opacity-80 relative text-[#34947A]">
       <div
         className="w-full absolute h-full bg-no-repeat bg-cover bg-center"
         style={{ backgroundImage: "url('/top/bg-data.jpg')" }}
@@ -127,7 +127,7 @@ export const Numbers: React.FC = () => {
               className=" mx-auto pt-10 border-b-2 flex-wrap  flex justify-center"
             >
               <div className=" w-1/3 text-lg text-center">
-                <p>連結売上高（2022年度）</p>
+                <p className="font-bold text-lg">連結売上高（2022年度）</p>
                 <Image
                   src="/top/numbers/icon-1.png"
                   className=" mx-auto pt-5"
@@ -135,12 +135,12 @@ export const Numbers: React.FC = () => {
                   height={93}
                   alt="売上"
                 />
-                <p>
-                  <motion.span className=" text-[74px] font-bold">{age}</motion.span> 億円
+                <p className=" font-oswald font-bold">
+                  <motion.span className=" text-[74px]">{earnings}</motion.span> 億円
                 </p>
               </div>
               <div className=" w-1/3 border-x-2  text-lg text-center">
-                <p>1級土木有資格者</p>
+                <p className="font-bold text-lg">1級土木有資格者</p>
                 <Image
                   src="/top/numbers/icon-2.png"
                   className=" mx-auto pt-5"
@@ -149,12 +149,12 @@ export const Numbers: React.FC = () => {
                   alt="資格者"
                 />
 
-                <p>
-                  <motion.span className=" text-[74px] font-bold">{license}</motion.span>人
+                <p className="font-bold font-oswald">
+                  <motion.span className=" text-[74px] ">{license}</motion.span>人
                 </p>
               </div>
               <div className=" w-1/3 text-lg text-center">
-                <p>平均年収</p>
+                <p className=" font-bold text-lg">平均年収</p>
                 <Image
                   src="/top/numbers/icon-3.png"
                   className=" mx-auto pt-5"
@@ -162,9 +162,9 @@ export const Numbers: React.FC = () => {
                   height={112}
                   alt="資格者"
                 />
-                <p className=" text-base">NIPPO総合職平均</p>
-                <p className="-mt-7">
-                  <motion.span className=" text-[74px]  font-bold">{salary}</motion.span>万円
+                <p className=" text-base font-bold text-lg">NIPPO総合職平均</p>
+                <p className="-mt-7 font-bold font-oswald">
+                  <motion.span className=" text-[74px]  ">{salary}</motion.span>万円
                 </p>
               </div>
             </InView>
@@ -174,7 +174,7 @@ export const Numbers: React.FC = () => {
               className=" pt-10 border-white flex flex-wrap justify-center"
             >
               <div className=" mb-10   w-1/2 ">
-                <p className=" text-center">連結売上高構成比</p>
+                <p className=" text-center font-bold text-lg">連結売上高構成比</p>
                 <div className=" flex justify-center mt-10">
                   <div>
                     <Image src="/add/graph-1.png" width={300} height={300} alt="graph" />
@@ -192,7 +192,7 @@ export const Numbers: React.FC = () => {
                 </div>
               </div>
               <div className=" mb-10 mx-auto w-1/2 ">
-                <p className=" text-center">官民受注割合（NIPPO単体）</p>
+                <p className=" text-center font-bold text-lg">官民受注割合（NIPPO単体）</p>
                 <div className=" flex justify-center mt-10">
                   <div>
                     <Image src="/add/graph-1.png" width={300} height={300} alt="graph" />
@@ -216,7 +216,7 @@ export const Numbers: React.FC = () => {
               className="border-t pt-10 border-white flex flex-wrap justify-center"
             >
               <div className=" mb-10 mx-auto w-1/2 ">
-                <p className=" text-center">官民受注割合（NIPPO単体）</p>
+                <p className=" text-center text-lg font-bold">官民受注割合（NIPPO単体）</p>
                 <div className=" flex justify-center mt-10">
                   <div>
                     <Image src="/add/graph-1.png" width={300} height={300} alt="graph" />
@@ -236,8 +236,8 @@ export const Numbers: React.FC = () => {
               <div className="w-1/2 flex">
                 {row2.map((item, index) => (
                   <div key={item.id} className="  w-1/2 text-center">
-                    <p>{item.name}</p>
-                    <p>
+                    <p className=" text-lg font-bold">{item.name}</p>
+                    <p className=" text-lg font-bold font-oswald">
                       <motion.span className=" text-[96px] font-bold">
                         {transformedValues[index]}
                       </motion.span>
@@ -255,7 +255,7 @@ export const Numbers: React.FC = () => {
               <div className=" w-full px-10 flex">
                 {row4.map((item, index) => (
                   <div key={item.id} className="  w-1/4 text-center">
-                    <p>{item.name}</p>
+                    <p className=" text-lg font-bold">{item.name}</p>
                     <Image
                       src={item.path}
                       width={120}
@@ -263,8 +263,8 @@ export const Numbers: React.FC = () => {
                       alt="icon"
                       className=" mx-auto pt-5"
                     />
-                    <p>
-                      <motion.span className=" text-[96px] font-bold">
+                    <p className="font-bold font-oswald text-lg">
+                      <motion.span className=" text-[96px] ">
                         {transformedValues2[index]}
                       </motion.span>
                       {item.unit}

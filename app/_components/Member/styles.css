@@ -1,0 +1,9 @@
+/* styles.css */
+.custom-circle {
+  background-color: #00ff00; /* 緑色 */
+  color: white; /* テキストの色を白に */
+  border-radius: 50%; /* 丸くする */
+  padding: 10px; /* 内側の余白 */
+  display: inline-block; /* インラインブロック表示 */
+  text-align: center; /* テキストを中央揃え */
+}
