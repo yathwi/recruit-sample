@@ -5,7 +5,6 @@ import { Hero } from './_components/Hero';
 import { Message } from './_components/Message';
 import { Member } from './_components/Member';
 import { Numbers } from './_components/Numbers';
-import { JobList } from './_components/JobList';
 import { News } from './_components/News';
 import { Cta } from './_components/Cta';
 import { Business } from './_components/Business';
