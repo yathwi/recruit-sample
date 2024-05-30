@@ -10,7 +10,7 @@ const navItems = [
   },
   {
     name: ' 施工事例',
-    path: 'works',
+    path: 'case',
   },
   {
     name: '社員紹介',
@@ -18,7 +18,7 @@ const navItems = [
   },
   {
     name: '数字で見る',
-    path: 'data',
+    path: '#numbers',
   },
   {
     name: '募集要項',
@@ -40,7 +40,7 @@ export default function Header() {
               key={item.path}
               className=" -mt-3 cursor-pointer text-[16px] hover:underline inline-block ml-8"
             >
-              {item.name}
+              <Link href={item.path}>{item.name}</Link>
             </li>
           ))}
           <button className=" hover:opacity-8 ml-8 px-16 text-lg  pt-12 pb-8 -mt-12 top-0 bg-green-500">

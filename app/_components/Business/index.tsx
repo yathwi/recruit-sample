@@ -19,7 +19,7 @@ export const Business: React.FC = () => {
       <div className=" max-w-[85%] mx-auto pt-20">
         <div className=" relative h-40 ">
           <h3 className=" absolute -ml-5 text-[96px] font-bold text-white">JOBS</h3>
-          <h2 className=" text-2xl absolute z-10 pt-20">仕事紹介</h2>
+          <h2 className=" text-2xl absolute z-10 pt-20 font-bold">仕事紹介</h2>
         </div>
         <p>
           豊かな社会を実現するNIPPOの4つの事業領域 <br />
@@ -51,7 +51,7 @@ export const Business: React.FC = () => {
         <div className="flex justify-center">
           {items.map((item) => (
             <Link href={item.path} key={item.path} className=" hover:opacity-80">
-              <Image src={item.image} alt={item.name} width={280} height={280} />
+              <Image src={item.image} alt={item.name} width={274} height={320} />
             </Link>
           ))}
         </div>

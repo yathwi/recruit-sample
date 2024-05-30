@@ -15,7 +15,7 @@ module.exports = {
         oswald: ['Oswald'],
         cinzel: ['Cinzel'],
         mincho: ['YuMincho'],
-        hiragino: ['Hiragino Sans', 'sans-serif'], // Hiragino Sansフォントを追加
+        hiragino: ['Hiragino Sans'], // Hiragino Sansフォントを追加
       },
       fontWeight: {
         light: 300,

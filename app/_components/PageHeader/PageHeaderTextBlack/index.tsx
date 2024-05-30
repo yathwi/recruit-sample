@@ -10,7 +10,7 @@ const navItems = [
   },
   {
     name: ' 施工事例',
-    path: 'works',
+    path: 'case',
   },
   {
     name: '社員紹介',
@@ -18,7 +18,7 @@ const navItems = [
   },
   {
     name: '数字で見る',
-    path: 'data',
+    path: '#numbers',
   },
   {
     name: '募集要項',
@@ -26,19 +26,13 @@ const navItems = [
   },
 ];
 
-export default function PageHeaderTextBlack() {
+export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   return (
-    <header className=" ">
+    <header className="  ">
       <div className="  ml-[5%] hidden  font-oswald font-bold mx-auto absolute top-0 left-0 right-0 pt-8 pb-8 z-50 lg:flex items-center justify-between">
         <Link href="/" className="flex">
-          <Image
-            src="/top/logo-black.png"
-            alt="株式会社NIPPOロゴ"
-            className=" "
-            width={99}
-            height={29}
-          />
+          <Image src="/top/logo.png" alt="株式会社NIPPOロゴ" className=" " width={99} height={29} />
         </Link>
         <ul className=" flex items-center">
           {navItems.map((item) => (
@@ -46,10 +40,10 @@ export default function PageHeaderTextBlack() {
               key={item.path}
               className=" -mt-3 cursor-pointer text-[16px] hover:underline inline-block ml-8"
             >
-              {item.name}
+              <Link href={item.path}>{item.name}</Link>
             </li>
           ))}
-          <button className=" hover:opacity-8 ml-8 px-16 text-white text-lg  pt-12 pb-8 -mt-12 top-0 bg-green-500">
+          <button className=" hover:opacity-8 ml-8 px-16 text-lg  pt-12 pb-8 -mt-12 text-white top-0 bg-green-500">
             ENTRY
           </button>
         </ul>

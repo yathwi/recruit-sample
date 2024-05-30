@@ -11,12 +11,14 @@ const row2 = [
     name: '年間賞与',
     value: 6.33,
     unit: 'ヶ月分',
+    path: '/top/numbers/icon-8.jpg',
   },
   {
     id: 'ReturnRate',
     name: '平均勤続年数',
     value: 17.6,
     unit: '年',
+    path: '/top/numbers/icon-9.jpg',
   },
 ];
 
@@ -33,31 +35,40 @@ const row4 = [
     name: '平均時間外勤務時間',
     value: 27.6,
     unit: '時間/月',
-    path: '/top/numbers/icon-4.jpg',
+    path: '/top/numbers/icon-10.jpg',
   },
   {
     id: 'maternityLeave',
     name: '育休取得率',
     value: 100,
     unit: '％',
-    path: '/top/numbers/icon-4.jpg',
+    path: '/top/numbers/icon-11.jpg',
   },
   {
     id: 'ReturnRate',
     name: '復職率',
     value: 100,
     unit: '％',
-    path: '/top/numbers/icon-4.jpg',
+    path: '/top/numbers/icon-12.jpg',
   },
 ];
 
 export const Numbers: React.FC = () => {
   const count = useMotionValue(0);
-  const earnings = useTransform(count, (latest) => Math.round(latest));
+  const earnings = useTransform(count, (latest) => {
+    const roundedValue = Math.round(latest);
+    return roundedValue.toLocaleString();
+  });
   const count2 = useMotionValue(0);
-  const license = useTransform(count2, (latest) => Math.round(latest));
+  const license = useTransform(count2, (latest) => {
+    const roundedValue = Math.round(latest);
+    return roundedValue.toLocaleString();
+  });
   const count3 = useMotionValue(0);
-  const salary = useTransform(count3, (latest) => Math.round(latest));
+  const salary = useTransform(count3, (latest) => {
+    const roundedValue = Math.round(latest);
+    return roundedValue.toLocaleString();
+  });
 
   const turnoverCount = useMotionValue(0);
   const turnover = useTransform(turnoverCount, (latest) => Math.round(latest));
@@ -108,7 +119,10 @@ export const Numbers: React.FC = () => {
     });
   };
   return (
-    <div className=" w-full mt-20 bg-[#32727C] lg:h-[1850px] h-[1550px] bg-opacity-80 relative text-[#34947A]">
+    <div
+      id="numbers"
+      className=" w-full mt-20 bg-[#32727C] lg:h-[1850px] h-[1550px] bg-opacity-80 relative text-[#34947A]"
+    >
       <div
         className="w-full absolute h-full bg-no-repeat bg-cover bg-center"
         style={{ backgroundImage: "url('/top/bg-data.jpg')" }}
@@ -162,7 +176,7 @@ export const Numbers: React.FC = () => {
                   height={112}
                   alt="資格者"
                 />
-                <p className=" text-base font-bold text-lg">NIPPO総合職平均</p>
+                <p className="  font-bold text-lg">NIPPO総合職平均</p>
                 <p className="-mt-7 font-bold font-oswald">
                   <motion.span className=" text-[74px]  ">{salary}</motion.span>万円
                 </p>
@@ -171,9 +185,9 @@ export const Numbers: React.FC = () => {
             <InView
               as="div"
               onChange={(inView) => inView && startAnimation2()}
-              className=" pt-10 border-white flex flex-wrap justify-center"
+              className="flex border-b-2 flex-wrap justify-center"
             >
-              <div className=" mb-10   w-1/2 ">
+              <div className=" pb-10 pt-10  w-1/2 ">
                 <p className=" text-center font-bold text-lg">連結売上高構成比</p>
                 <div className=" flex justify-center mt-10">
                   <div>
@@ -191,7 +205,7 @@ export const Numbers: React.FC = () => {
                   </div>
                 </div>
               </div>
-              <div className=" mb-10 mx-auto w-1/2 ">
+              <div className=" pb-10 pt-10 border-l-2  mx-auto w-1/2 ">
                 <p className=" text-center font-bold text-lg">官民受注割合（NIPPO単体）</p>
                 <div className=" flex justify-center mt-10">
                   <div>
@@ -213,9 +227,9 @@ export const Numbers: React.FC = () => {
             <InView
               as="div"
               onChange={(inView) => inView && startAnimation2()}
-              className="border-t pt-10 border-white flex flex-wrap justify-center"
+              className="border-t  border-white flex flex-wrap justify-center"
             >
-              <div className=" mb-10 mx-auto w-1/2 ">
+              <div className=" mb-10 mx-auto w-1/2 pt-10">
                 <p className=" text-center text-lg font-bold">官民受注割合（NIPPO単体）</p>
                 <div className=" flex justify-center mt-10">
                   <div>
@@ -233,10 +247,20 @@ export const Numbers: React.FC = () => {
                   </div>
                 </div>
               </div>
-              <div className="w-1/2 flex">
+              <div className="w-1/2 border-l-2  flex">
                 {row2.map((item, index) => (
-                  <div key={item.id} className="  w-1/2 text-center">
-                    <p className=" text-lg font-bold">{item.name}</p>
+                  <div
+                    key={item.id}
+                    className={`pt-10 ${index === 1 ? 'border-l-2' : ''}  w-1/2 text-center`}
+                  >
+                    <p className=" text-lg  font-bold">{item.name}</p>
+                    <Image
+                      src={item.path}
+                      width={120}
+                      height={120}
+                      alt="icon"
+                      className=" mx-auto pt-5"
+                    />
                     <p className=" text-lg font-bold font-oswald">
                       <motion.span className=" text-[96px] font-bold">
                         {transformedValues[index]}
