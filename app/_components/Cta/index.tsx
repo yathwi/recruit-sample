@@ -5,7 +5,7 @@ export const Cta: React.FC = () => {
     <Link href="/entry">
       <div className="  hover:opacity-80 w-full text-white">
         <Image
-          src="/top/cta.png"
+          src="/top/CTA-bg.png"
           width={1280}
           height={313}
           alt="エントリーCTA"
