@@ -37,6 +37,7 @@
     "eslint-config-prettier": "^8.7.0",
     "framer-motion": "^10.17.4",
     "gsap": "^3.12.2",
+    "gsap-trial": "^3.12.5",
     "highlight.js": "^11.7.0",
     "lil-gui": "^0.19.1",
     "microcms-js-sdk": "^2.3.3",

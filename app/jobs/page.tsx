@@ -6,9 +6,9 @@ import { useEffect, useRef, useState } from 'react';
 import { Cta } from '../_components/Cta';
 import PageHeaderTextBlack from '../_components/PageHeader/PageHeaderTextBlack';
 import { ProgressBar } from '../_components/ui/ProgessBar';
-import { ScrollSmoother } from 'gsap/dist/ScrollSmoother';
+import { ScrollSmoother } from 'gsap-trial/dist/ScrollSmoother';
 
-gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
 export const revalidate = 60;
 
@@ -93,6 +93,13 @@ export default async function Page() {
   const progressRef = useRef<any>(null);
 
   useEffect(() => {
+    const smoother = ScrollSmoother.create({
+      wrapper: '.smooth-wrapper',
+      content: '.smooth-content',
+      smooth: 1.5,
+      effects: true,
+    });
+
     // ウィンドウのリサイズ時にも正確に機能させるために、関数内で設定を行います。
     const setupScrollTrigger = () => {
       // ScrollTriggerの設定前に既存のインスタンスをクリーンアップ
@@ -322,7 +329,7 @@ export default async function Page() {
           </div>
         </div>
       </div>
-      {/* <Cta /> */}
+      <Cta />
     </div>
   );
 }
