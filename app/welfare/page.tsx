@@ -16,7 +16,8 @@ gsap.registerPlugin(ScrollTrigger);
 export default function Page() {
   const imageRef = useRef<any>(null);
   const containerRef = useRef<any>(null);
-  const leftRef = useRef<any>(null);
+  const leftRef1 = useRef<any>(null);
+  const leftRef2 = useRef<any>(null);
 
   useEffect(() => {
     gsap.fromTo(
@@ -34,13 +35,21 @@ export default function Page() {
         },
       },
     );
-    gsap.to(leftRef.current, {
+    gsap.to(leftRef1.current, {
       scrollTrigger: {
-        trigger: leftRef.current,
+        trigger: leftRef1.current,
         start: 'center center',
         end: 'bottom top',
         pin: true,
-        pinSpacing: false,
+      },
+    });
+    gsap.to(leftRef2.current, {
+      scrollTrigger: {
+        trigger: leftRef2.current,
+        start: 'center center',
+        end: 'bottom top',
+        pin: true,
+        markers: true,
       },
     });
   }, []);
@@ -49,14 +58,14 @@ export default function Page() {
     <div className="bg-green-main font-hiragino">
       <PageHeaderTextBlack />
       <div>
-        <div ref={containerRef} className="relative pt-60 h-[500px] text-center font-bold">
+        <div className="relative pt-60 h-[500px] text-center font-bold">
           <h2 className="absolute font-oswald pt-40 text-green-500 opacity-20 left-[-250px] text-end rotate-90 text-[288px]">
             WELFARE
           </h2>
           <h1 className="text-[48px]">福利厚生</h1>{' '}
         </div>
       </div>
-      <div className=" w-full mx-auto">
+      <div className=" relative w-full mx-auto">
         <Image
           ref={imageRef}
           src="/top/career/sample-1.jpg"
@@ -73,12 +82,14 @@ export default function Page() {
         <li>ヘルスケア</li>
         <li>その他諸制度</li>
       </ul>
-      <div className=" bg-white rounded-t-[80px] ">
-        <div className="max-w-[70%] pt-20 pb-40 flex justify-center mx-auto">
-          <h2 ref={leftRef} className=" text-[40px] w-40 font-bold">
-            休暇
-          </h2>
-          <div className=" ml-16">
+      <div className=" bg-white pt-20 rounded-t-[80px] ">
+        <div className="max-w-[80%]  flex justify-center mx-auto">
+          <div className=" w-60 mr-20 ">
+            <h2 ref={leftRef1} className=" text-[40px] text-right  font-bold">
+              休暇
+            </h2>
+          </div>
+          <div>
             <div>
               <p className=" text-lg font-bold">長期休暇</p>
               <p>
@@ -104,11 +115,13 @@ export default function Page() {
             </div>
           </div>
         </div>
-      </div>{' '}
-      <div className=" bg-[#EEF1F4] rounded-t-[80px] ">
-        <div className="max-w-[70%] pt-20 pb-40 flex justify-center mx-auto">
-          <h2 className=" text-[40px] w-40 font-bold">住まい</h2>
-          <div className=" ml-16">
+      </div>
+      <div className=" bg-[#EEF1F4] pt-20 rounded-t-[80px] ">
+        <div className="max-w-[80%]  pb-40 flex justify-center mx-auto">
+          <div className=" w-60 mr-20">
+            <h2 className=" text-[40px] text-right font-bold">住まい</h2>
+          </div>
+          <div>
             <div>
               <p className=" text-lg font-bold">社宅制度</p>
               <p>
@@ -125,9 +138,11 @@ export default function Page() {
         </div>
       </div>
       <div className=" bg-white rounded-t-[80px] ">
-        <div className="max-w-[70%] pt-20 pb-40 flex justify-center mx-auto">
-          <h2 className=" text-[40px] w-40 font-bold">育児制度</h2>
-          <div className=" ml-16">
+        <div className="max-w-[80%] pt-20 pb-40 flex justify-center mx-auto">
+          <div className=" w-60 mr-20">
+            <h2 className=" text-[40px] text-right font-bold">育児制度</h2>
+          </div>
+          <div className=" ">
             <div>
               <p className=" text-lg font-bold">時短勤務・休業</p>
               <p>
@@ -174,9 +189,11 @@ export default function Page() {
         </div>
       </div>
       <div className=" bg-[#EEF1F4]  rounded-t-[80px] ">
-        <div className="max-w-[70%] pt-20 pb-40 flex justify-center mx-auto">
-          <h2 className=" text-[40px] w-40 font-bold">ヘルスケア</h2>
-          <div className=" ml-16">
+        <div className="max-w-[80%] pt-20 pb-40 flex justify-center mx-auto">
+          <div className=" w-60 mr-20">
+            <h2 className=" text-[40px] text-right font-bold">ヘルスケア</h2>
+          </div>
+          <div className=" ">
             <div>
               <p className=" text-lg font-bold">ヘルスケアプログラム</p>
               <p>
@@ -215,13 +232,15 @@ export default function Page() {
         </div>
       </div>
       <div className=" bg-white rounded-t-[80px] ">
-        <div className="max-w-[70%] pt-20 pb-40 flex justify-center mx-auto">
-          <h2 className=" text-[40px] w-40 font-bold">
-            その他
-            <br />
-            諸制度
-          </h2>
-          <div className=" ml-16">
+        <div className="max-w-[80%] pt-20 pb-40 flex justify-center mx-auto">
+          <div className=" w-60 mr-20">
+            <h2 className=" text-[40px] text-right  font-bold">
+              その他
+              <br />
+              諸制度
+            </h2>
+          </div>
+          <div className=" ">
             <div>
               <p className=" text-lg font-bold">新入社員の帰省手当</p>
               <p>
