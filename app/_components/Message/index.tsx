@@ -26,10 +26,10 @@ export const Message: React.FC = () => {
           }}
           initial="offscreen" // 初期表示はoffscreen
           whileInView="onscreen" // 画面内に入ったらonscreen
-          viewport={{ once: false, amount: 0.5 }}
+          viewport={{ once: true, amount: 0.5 }}
           className="   mx-auto lg:max-w-[90%] max-w-[95%] pt-32 "
         >
-          <div className=" text-center text-[20px] flex flex-col gap-10  text-white ">
+          <div className=" text-center font-bold text-[20px] flex flex-col gap-10  text-white ">
             <p className="">この道の先に広がる景色はどんなだろう。</p>
             <p className="">
               道は土地を繋ぐ。

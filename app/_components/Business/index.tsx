@@ -13,10 +13,10 @@ const items = [
 export const Business: React.FC = () => {
   return (
     <div
-      className="bg-cover bg-center h-screen"
+      className="bg-cover bg-center pt-20 pb-32"
       style={{ backgroundImage: "url('/top/bg-business.jpg')" }}
     >
-      <div className=" max-w-[85%] mx-auto pt-20">
+      <div className=" max-w-[85%] mx-auto ">
         <div className=" relative h-40 ">
           <h3 className=" absolute -ml-5 text-[96px] font-bold text-white">JOBS</h3>
           <h2 className=" text-2xl absolute z-10 pt-20 font-bold">仕事紹介</h2>
@@ -45,13 +45,13 @@ export const Business: React.FC = () => {
         }}
         initial="offscreen" // 初期表示はoffscreen
         whileInView="onscreen" // 画面内に入ったらonscreen
-        viewport={{ once: false, amount: 0.5 }}
-        className="   mx-auto lg:max-w-[90%] max-w-[95%] pt-20 "
+        viewport={{ once: true, amount: 0.5 }}
+        className="   mx-auto lg:max-w-[90%] max-w-[95%] pt-10 "
       >
-        <div className="flex justify-center">
+        <div className="flex w-full flex-wrap justify-center">
           {items.map((item) => (
             <Link href={item.path} key={item.path} className=" hover:opacity-80">
-              <Image src={item.image} alt={item.name} width={274} height={320} />
+              <Image src={item.image} alt={item.name} width={329} height={384} />
             </Link>
           ))}
         </div>

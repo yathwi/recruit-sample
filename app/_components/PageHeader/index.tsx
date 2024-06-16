@@ -5,7 +5,7 @@ import styles from './index.module.css';
 import { useState } from 'react';
 const navItems = [
   {
-    name: '事業内容',
+    name: '仕事紹介',
     path: 'jobs',
   },
   {
@@ -17,12 +17,20 @@ const navItems = [
     path: 'members',
   },
   {
-    name: '数字で見る',
-    path: '#numbers',
+    name: '福利厚生',
+    path: 'welfare',
+  },
+  {
+    name: '研修制度',
+    path: 'career',
+  },
+  {
+    name: 'ニュース',
+    path: 'news',
   },
   {
     name: '募集要項',
-    path: 'recruit',
+    path: 'recruitment',
   },
 ];
 

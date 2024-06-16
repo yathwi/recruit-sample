@@ -121,7 +121,7 @@ export const Numbers: React.FC = () => {
   return (
     <div
       id="numbers"
-      className=" w-full mt-20 bg-[#32727C] lg:h-[1850px] h-[1550px] bg-opacity-80 relative text-[#34947A]"
+      className=" w-full mt-20 bg-[#32727C] lg:h-[1850px] h-[1550px] bg-opacity-80 relative "
     >
       <div
         className="w-full absolute h-full bg-no-repeat bg-cover bg-center"
@@ -131,10 +131,10 @@ export const Numbers: React.FC = () => {
 
         <div className=" max-w-[90%] relative mx-auto">
           <div className=" relative h-40 ">
-            <h3 className=" absolute -ml-5 text-[96px] text-white font-bold ">DATA</h3>
+            <h3 className=" absolute -ml-5 text-[96px] text-white font-bold">DATA</h3>
             <h2 className=" text-2xl absolute z-10 font-bold pt-20">数字で見るNIPPO</h2>
           </div>
-          <div className=" mt-10 lg:mt-10 mx-auto">
+          <div className=" mt-10 text-[#34947A] lg:mt-10 mx-auto">
             <InView
               as="div"
               onChange={startAnimation1}
@@ -229,20 +229,22 @@ export const Numbers: React.FC = () => {
               onChange={(inView) => inView && startAnimation2()}
               className="border-t  border-white flex flex-wrap justify-center"
             >
-              <div className=" mb-10 mx-auto w-1/2 pt-10">
-                <p className=" text-center text-lg font-bold">官民受注割合（NIPPO単体）</p>
-                <div className=" flex justify-center mt-10">
+              <div className="mb-10 mx-auto relative w-1/2 pt-10">
+                <p className="text-center text-lg font-bold">男女比</p>
+                <div className="flex justify-center mt-5 items-end">
+                  <div className="flex flex-col items-center">
+                    <p>
+                      男性
+                      <motion.span className="text-[64px] px-2">{maleFemale}</motion.span>%
+                    </p>
+                  </div>
                   <div>
                     <Image src="/add/graph-1.png" width={300} height={300} alt="graph" />
                   </div>
-                  <div className=" -mt-5 leading-9">
-                    <p>
-                      男性
-                      <motion.span className=" text-[64px] px-2">{maleFemale}</motion.span>%
-                    </p>
+                  <div className="flex flex-col items-center">
                     <p>
                       女性
-                      <motion.span className=" text-[64px] px-2">{maleFemale}</motion.span>%
+                      <motion.span className="text-[64px] px-2">{maleFemale}</motion.span>%
                     </p>
                   </div>
                 </div>

@@ -5,7 +5,7 @@ import styles from './index.module.css';
 import { useState } from 'react';
 const navItems = [
   {
-    name: '事業内容',
+    name: '仕事紹介',
     path: 'jobs',
   },
   {
@@ -17,12 +17,20 @@ const navItems = [
     path: 'members',
   },
   {
-    name: '数字で見る',
-    path: '#numbers',
+    name: '福利厚生',
+    path: 'welfare',
+  },
+  {
+    name: '研修制度',
+    path: 'career',
+  },
+  {
+    name: 'ニュース',
+    path: 'news',
   },
   {
     name: '募集要項',
-    path: 'recruit',
+    path: 'recruitment',
   },
 ];
 
@@ -32,7 +40,13 @@ export default function Header() {
     <header className="  ">
       <div className="  ml-[5%] hidden  font-oswald font-bold mx-auto absolute top-0 left-0 right-0 pt-8 pb-8 z-50 lg:flex items-center justify-between">
         <Link href="/" className="flex">
-          <Image src="/top/logo.png" alt="株式会社NIPPOロゴ" className=" " width={99} height={29} />
+          <Image
+            src="/top/logo-black.png"
+            alt="株式会社NIPPOロゴ"
+            className=" "
+            width={99}
+            height={29}
+          />
         </Link>
         <ul className=" flex items-center">
           {navItems.map((item) => (

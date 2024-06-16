@@ -87,7 +87,7 @@ export const Case: React.FC = () => {
         }}
         initial="offscreen"
         whileInView="onscreen"
-        viewport={{ once: false, amount: 0.5 }}
+        viewport={{ once: true, amount: 0.5 }}
         className="mx-auto  "
       >
         <div className="relative ml-[5%] -mt-[620px]">
