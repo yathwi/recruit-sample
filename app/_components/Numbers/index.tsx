@@ -4,6 +4,8 @@ import Image from 'next/image';
 import { useMotionValue, motion, useTransform, animate } from 'framer-motion';
 import { useEffect } from 'react';
 import path from 'path';
+import { OrderRatio } from '../ui/graph/OrderRatio';
+import { EarningRatio } from '../ui/graph/EarningRatio';
 
 const row2 = [
   {
@@ -189,26 +191,20 @@ export const Numbers: React.FC = () => {
             >
               <div className=" pb-10 pt-10  w-1/2 ">
                 <p className=" text-center font-bold text-lg">連結売上高構成比</p>
-                <div className=" flex justify-center mt-10">
-                  <div>
-                    <Image src="/add/graph-1.png" width={300} height={300} alt="graph" />
-                  </div>
-                  <div className=" -mt-5 leading-9">
-                    <p>
-                      男性
-                      <motion.span className=" text-[64px] px-2">{maleFemale}</motion.span>%
-                    </p>
-                    <p>
-                      女性
-                      <motion.span className=" text-[64px] px-2">{maleFemale}</motion.span>%
-                    </p>
-                  </div>
-                </div>
+
+                <EarningRatio
+                  data={[
+                    { name: '舗装・土木', value: 65 },
+                    { name: '建築', value: 15 },
+                    { name: '製造・販売', value: 14 },
+                    { name: '開発・その他', value: 6 },
+                  ]}
+                />
               </div>
               <div className=" pb-10 pt-10 border-l-2  mx-auto w-1/2 ">
                 <p className=" text-center font-bold text-lg">官民受注割合（NIPPO単体）</p>
-                <div className=" flex justify-center mt-10">
-                  <div>
+                <div className="  relative mt-10">
+                  {/* <div>
                     <Image src="/add/graph-1.png" width={300} height={300} alt="graph" />
                   </div>
                   <div className=" -mt-5 leading-9">
@@ -220,6 +216,14 @@ export const Numbers: React.FC = () => {
                       女性
                       <motion.span className=" text-[64px] px-2">{maleFemale}</motion.span>%
                     </p>
+                  </div> */}
+                  <div className="flex justify-center mt-10">
+                    <OrderRatio
+                      data={[
+                        { name: '民間', value: 52 },
+                        { name: '官庁', value: 48 },
+                      ]}
+                    />
                   </div>
                 </div>
               </div>
