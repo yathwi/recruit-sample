@@ -1,3 +1,4 @@
+'use client';
 import { PieChart, Pie, Cell, ResponsiveContainer } from 'recharts';
 
 // ...
@@ -32,7 +33,6 @@ const renderCustomizedLabel = ({
   const textOffset = 10; // テキストのオフセットを調整してください
 
   if (index === 3) {
-    // インデックスを2に変更
     const textX = x > cx ? x + lineLength + textOffset : x - lineLength - textOffset;
     const textY = y;
     const lineX = x > cx ? x + lineLength : x - lineLength;
@@ -71,28 +71,28 @@ const renderCustomizedLabel = ({
       </g>
     );
   }
-  if (index === 0) {
+  if (index === 2) {
     return (
       <g>
         <text
-          x={x}
-          y={y - 30}
-          fontSize={20}
-          fill="white"
+          x={x + 40}
+          y={y - 40}
+          fontSize={16}
+          fill="#34947A"
           fontWeight="bold"
           textAnchor="middle"
           dominantBaseline="central"
           font-family="yu-gothic"
         >
-          {name}{' '}
+          {name}
         </text>
         <text
-          x={x}
-          y={y + 20}
-          fill="white"
+          x={x + 40}
+          y={y - 5}
+          fill="#34947A"
           textAnchor="middle"
           dominantBaseline="central"
-          fontSize={64}
+          fontSize={48}
           fontWeight="bold"
           fontFamily="Oswald"
         >
@@ -143,7 +143,7 @@ const renderCustomizedLabel = ({
     <g>
       <text
         x={x + 30}
-        y={index === 1 ? y - 20 : y - 40}
+        y={y - 20}
         fontSize={16}
         fill={index === 1 ? 'white' : '#34947A'}
         fontWeight="bold"
@@ -155,11 +155,11 @@ const renderCustomizedLabel = ({
       </text>
       <text
         x={x + 40}
-        y={index === 1 ? y + 10 : y - 10}
-        fill={index === 1 ? 'white' : '#34947A'}
+        y={y + 15}
+        fill={'white'}
         textAnchor="middle"
         dominantBaseline="central"
-        fontSize={32}
+        fontSize={48}
         fontWeight="bold"
         fontFamily="Oswald"
       >

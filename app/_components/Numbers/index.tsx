@@ -6,6 +6,7 @@ import { useEffect } from 'react';
 import path from 'path';
 import { OrderRatio } from '../ui/graph/OrderRatio';
 import { EarningRatio } from '../ui/graph/EarningRatio';
+import { GenderRatio } from '../ui/graph/GenderRatio';
 
 const row2 = [
   {
@@ -204,19 +205,6 @@ export const Numbers: React.FC = () => {
               <div className=" pb-10 pt-10 border-l-2  mx-auto w-1/2 ">
                 <p className=" text-center font-bold text-lg">官民受注割合（NIPPO単体）</p>
                 <div className="  relative mt-10">
-                  {/* <div>
-                    <Image src="/add/graph-1.png" width={300} height={300} alt="graph" />
-                  </div>
-                  <div className=" -mt-5 leading-9">
-                    <p>
-                      男性
-                      <motion.span className=" text-[64px] px-2">{maleFemale}</motion.span>%
-                    </p>
-                    <p>
-                      女性
-                      <motion.span className=" text-[64px] px-2">{maleFemale}</motion.span>%
-                    </p>
-                  </div> */}
                   <div className="flex justify-center mt-10">
                     <OrderRatio
                       data={[
@@ -235,23 +223,12 @@ export const Numbers: React.FC = () => {
             >
               <div className="mb-10 mx-auto relative w-1/2 pt-10">
                 <p className="text-center text-lg font-bold">男女比</p>
-                <div className="flex justify-center mt-5 items-end">
-                  <div className="flex flex-col items-center">
-                    <p>
-                      男性
-                      <motion.span className="text-[64px] px-2">{maleFemale}</motion.span>%
-                    </p>
-                  </div>
-                  <div>
-                    <Image src="/add/graph-1.png" width={300} height={300} alt="graph" />
-                  </div>
-                  <div className="flex flex-col items-center">
-                    <p>
-                      女性
-                      <motion.span className="text-[64px] px-2">{maleFemale}</motion.span>%
-                    </p>
-                  </div>
-                </div>
+                <GenderRatio
+                  data={[
+                    { name: '男性', value: 83 },
+                    { name: '女性', value: 17 },
+                  ]}
+                />
               </div>
               <div className="w-1/2 border-l-2  flex">
                 {row2.map((item, index) => (

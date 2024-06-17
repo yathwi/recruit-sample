@@ -46,12 +46,14 @@ export const Business: React.FC = () => {
         initial="offscreen" // 初期表示はoffscreen
         whileInView="onscreen" // 画面内に入ったらonscreen
         viewport={{ once: true, amount: 0.5 }}
-        className="   mx-auto lg:max-w-[90%] max-w-[95%] pt-10 "
+        className="mx-auto lg:max-w-[90%] max-w-[95%] pt-10"
       >
         <div className="flex w-full flex-wrap justify-center">
           {items.map((item) => (
-            <Link href={item.path} key={item.path} className=" hover:opacity-80">
-              <Image src={item.image} alt={item.name} width={329} height={384} />
+            <Link href={item.path} key={item.path} className="">
+              <motion.div whileHover={{ scale: 1.05 }}>
+                <Image src={item.image} alt={item.name} width={329} height={384} />
+              </motion.div>
             </Link>
           ))}
         </div>
